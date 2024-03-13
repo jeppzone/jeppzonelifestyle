@@ -17,7 +17,10 @@
 	<h2 class="text-3xl pt-5 text-center tracking-tight font-bold">
 		Health enthusiast and lifestyle content creator based in Gothenburg.
 	</h2>
-	<p class="pt-5 text-xl text-pretty text-center tracking-tight">Hi! I'm Jesper Olsson Laine.</p>
+	<p class="pt-5 text-xl text-pretty text-center tracking-tight">
+		Hi! I'm Jesper Olsson Laine. I like to experiment with my health and produce content around my
+		experiences.
+	</p>
 	<h2 class="text-5xl pt-10 text-center tracking-tight font-bold">Posts.</h2>
 	<div class="grid grid-cols-1 gap-4 pt-10">
 		{#each data.posts as post}
