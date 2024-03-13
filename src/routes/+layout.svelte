@@ -3,9 +3,11 @@
 </script>
 
 <div class="app bg-gradient-to-r from-slate-950 to-slate-900">
-	<div class="w-full grid justify-center">
-		<a href="/" class="text-white border border-white p-5 rounded-l mt-10">Home</a>
-	</div>
+	<header>
+		<nav class="w-full grid justify-center">
+			<a href="/" class="text-white border border-white p-5 rounded-l mt-10">Home</a>
+		</nav>
+	</header>
 	<main>
 		<slot />
 	</main>
