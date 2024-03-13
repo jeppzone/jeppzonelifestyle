@@ -1,4 +1,5 @@
 // @ts-nocheck
+export const prerender = true;
 import { json } from '@sveltejs/kit';
 
 async function getPosts() {

@@ -6,9 +6,9 @@
 
 <!-- SEO -->
 <svelte:head>
-	<title>{data.meta.title} | Jeppzone Lifestyle</title>
+	<title>{data.meta?.title} | Jeppzone Lifestyle</title>
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content={data.meta.title} />
+	<meta property="og:title" content={data.meta?.title} />
 </svelte:head>
 
 <section>
