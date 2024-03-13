@@ -25,7 +25,7 @@
 	<div class="grid grid-cols-1 gap-4 pt-10">
 		{#each data.posts as post}
 			<a
-				href={post.slug}
+				href={`/posts/${post.slug}`}
 				class="text-white text-pretty border border-white py-8 px-10 rounded-l text-xl text-center tracking-tight"
 				>{post.title}</a
 			>

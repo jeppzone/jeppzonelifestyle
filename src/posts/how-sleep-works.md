@@ -13,7 +13,7 @@ Sleep is an underrated part of every healthy lifestyle. There’s a lot of buzz 
 
 ## How sleep works
 
-Sleep is defined as a period of alternating rest and wakefulness, and it’s controlled by internal body clocks with cycles of approximately 24 hours. These clocks are called circadian clocks and their cycles are regulated by many factors including light, darkness, and sleep schedules. These cycles are often called **_circadian rhythms_**. The central circadian clock is located in the brain, more exactly in the hypothalamus, and is called the **_suprachiasmatic nucleus_**, or SCN for short. I talk a little bit about the SCN in [my post on time-restricted eating](/time-restricted-eating) as well; a concept that is very much related to circadian rhythm and sleep.
+Sleep is defined as a period of alternating rest and wakefulness, and it’s controlled by internal body clocks with cycles of approximately 24 hours. These clocks are called circadian clocks and their cycles are regulated by many factors including light, darkness, and sleep schedules. These cycles are often called **_circadian rhythms_**. The central circadian clock is located in the brain, more exactly in the hypothalamus, and is called the **_suprachiasmatic nucleus_**, or SCN for short. I talk a little bit about the SCN in [my post on time-restricted eating](/posts/time-restricted-eating) as well; a concept that is very much related to circadian rhythm and sleep.
 
 ### Circadian rhythms
 
@@ -44,7 +44,7 @@ Alcohol is often seen as a sleep aid due to its sedative effects. While it’s t
 
 ### Caffeine and sleep
 
-Caffeine can induce a negative effect on sleep for many people due to it blocking the aforementioned adenosine receptors and causing increased alertness and wakefulness. I write more about this in [my post about caffeine](/i-quit-caffeine).
+Caffeine can induce a negative effect on sleep for many people due to it blocking the aforementioned adenosine receptors and causing increased alertness and wakefulness. I write more about this in [my post about caffeine](/posts/i-quit-caffeine).
 
 ### Sleep chronotypes
 

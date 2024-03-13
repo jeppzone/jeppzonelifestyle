@@ -22,7 +22,7 @@ It could be hard to know if you are mouth breathing or not, especially at night.
 - **Bad breath**
 - **Feeling tired upon awakening**
 
-So what’s the reason behind mouth breathing? A common issue is obstruction of the nasal airways due to for example allergies, nasal polyps (unwanted growth of tissue), tumors, or genetic abnormalities that affect your nose and nasal airways. There can also be other medical conditions that can cause mouth breathing. One such condition is sleep apnea, which I write more about in [my post on sleep apnea](/sleep-apnea). When an apnea episode occurs, your breathing stops momentarily. This can cause panic in the brain, leading to a loud snore as your body gasps for air. Such events can develop a habit of mouth breathing as they provide a lot of oxygen.
+So what’s the reason behind mouth breathing? A common issue is obstruction of the nasal airways due to for example allergies, nasal polyps (unwanted growth of tissue), tumors, or genetic abnormalities that affect your nose and nasal airways. There can also be other medical conditions that can cause mouth breathing. One such condition is sleep apnea, which I write more about in [my post on sleep apnea](/posts/sleep-apnea). When an apnea episode occurs, your breathing stops momentarily. This can cause panic in the brain, leading to a loud snore as your body gasps for air. Such events can develop a habit of mouth breathing as they provide a lot of oxygen.
 
 ### Why nose breathing is superior
 
@@ -42,7 +42,7 @@ Breathing through your mouth consistently can have several long-term consequence
 - **Physical changes** (primarily in children). For example, an elongated face, a forward open bite, and dark spots under the eyes can result from mouth breathing in children.
 - **Behavior problems** (primarily in children). Studies show that children who breathe through their mouths have an increased likelihood of developing conditions like ADHD.
 - **Bad breath**. Again, mouth breathing dries out the saliva, which affects the breath negatively as well.
-- **Sleep apnea and other sleep disorders**. People who breathe through their mouth are more likely to develop sleep apnea and other sleep disorders, as I write about in [my post on sleep apnea](/sleep-apnea).
+- **Sleep apnea and other sleep disorders**. People who breathe through their mouth are more likely to develop sleep apnea and other sleep disorders, as I write about in [my post on sleep apnea](/posts/sleep-apnea).
 - **Increased blood pressure and pulse**. Mouth breathing is associated with increased stress on the body, for example, increased blood pressure and pulse.
 
 ## Mouth breathing remedies
