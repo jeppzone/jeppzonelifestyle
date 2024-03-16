@@ -63,7 +63,7 @@ The blood groups play an essential role in determining if a certain type of bloo
 Therefore, **O- is the universal blood group for red blood cells**, since neither the A, B, or RhD antigens are present. **Everyone can receive red blood cells from O- blood**. Red blood cells from O- blood are used in emergencies or other situations when the blood type of the patient is unknown. Due to its universal properties, and the fact that only around 7 % of the global have this blood type, donors who possess this blood type are very sought after. The following transfusion rules apply to the rest of the blood groups:
 
 - **O+** can give red blood cells to **every other RhD-positive group** (A+, B+, AB+, and O+).
-- **A+** can give red blood cells to **A+** and **B+** while **A-** can **additionally** give to **A-** and **AB-**
+- **A+** can give red blood cells to **A+** and **AB+** while **A-** can **additionally** give to **A-** and **AB-**
 - **B+** can give red blood cells to **B+** and **AB+**, while **B-** can additionally give to **A-** and **AB-**
 - **AB+** can only give red blood cells to **AB+**, while **AB-** can additionally give to **AB-**
 
