@@ -6,7 +6,7 @@
 	<title>Lifestyle Content Creator | Jeppzone Lifestyle</title>
 	<meta
 		name="description"
-		content="Lifestyle content creator based in Gothenburg. Writing and proudcing videos about all things health and lifestyle"
+		content="Lifestyle content creator based in Gothenburg. Hi! I'm Jesper Olsson Laine. I write and proudce videos about all things health and lifestyle"
 	/>
 </svelte:head>
 
@@ -21,7 +21,7 @@
 		Hi! I'm Jesper Olsson Laine. I like to experiment with my health and produce content around my
 		experiences.
 	</p>
-	<h2 class="text-5xl pt-10 text-center tracking-tight font-bold">Posts.</h2>
+	<h2 class="text-5xl pt-10 text-center tracking-tight font-bold">Blog Posts.</h2>
 	<div class="grid grid-cols-1 gap-4 pt-10">
 		{#each data.posts as post}
 			<a
@@ -30,6 +30,19 @@
 				>{post.title}</a
 			>
 		{/each}
+	</div>
+	<h2 class="text-5xl pt-10 text-center tracking-tight font-bold">Tools.</h2>
+	<div class="grid grid-cols-2 gap-4 pt-10">
+		<a
+			href="/tools/child-height-calculator"
+			class="text-white text-pretty border border-white py-5 px-10 rounded-l text-xl text-center tracking-tight"
+			>Child Height Calculator</a
+		>
+		<a
+			href="/tools/bmi-calculator"
+			class="text-white text-pretty border border-white py-5 px-10 rounded-l text-xl text-center tracking-tight"
+			>BMI Calculator</a
+		>
 	</div>
 	<h2 class="text-5xl pt-10 text-center tracking-tight font-bold">Socials.</h2>
 	<div class="grid grid-cols-1 gap-4 pt-10">

@@ -7,7 +7,14 @@
 	<header>
 		{#if $page.url.pathname !== '/'}
 			<nav class="w-full grid justify-center">
-				<a href="/" class="text-white border border-white p-5 rounded-l mt-10">Home</a>
+				<div class="grid grid-cols-3 gap-4 text-center">
+					<a href="/" class="text-white border border-white px-6 py-2 rounded-l mt-10">Home</a>
+					<a href="/tools" class="text-white border border-white px-6 py-2 rounded-l mt-10">Tools</a
+					>
+					<a href="/posts" class="text-white border border-white px-6 py-2 rounded-l mt-10"
+						>Blog Posts</a
+					>
+				</div>
 			</nav>
 		{/if}
 	</header>
