@@ -8,6 +8,7 @@ export async function GET({ fetch, setHeaders }) {
 	const sites = [
 		'https://www.jeppzonelifestyle.com',
 		'https://www.jeppzonelifestyle.com/tools/child-height-calculator',
+		'https://www.jeppzonelifestyle.com/tools/bmi-calculator',
 		'https://www.jeppzonelifestyle.com/posts'
 	];
 	const baseUrl = 'https://www.jeppzonelifestyle.com';
