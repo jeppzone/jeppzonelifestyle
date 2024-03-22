@@ -129,7 +129,7 @@
 	<div class="text-center pt-10">
 		{#if unit === 'metric'}
 			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl">
-				Your Height
+				Your height
 				<input
 					bind:value={heightCm}
 					placeholder="cm"
