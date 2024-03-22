@@ -19,7 +19,7 @@
 	 * @type {number}
 	 */
 	let weightPounds;
-	let unit = 'imperial';
+	let unit = 'metric';
 	$: showResult =
 		(!isNaN(weightKg) && !isNaN(heightCm)) ||
 		(!isNaN(weightPounds) && !isNaN(heightFt) && !isNaN(heightIn));
@@ -86,6 +86,25 @@
 		// 1 kilogram is approximately equal to 2.20462262 pounds
 		return parseFloat((kg * 2.20462262).toFixed(1));
 	}
+
+	/**
+	 * @param {number} bmi
+	 */
+	function classifyBMI(bmi) {
+		if (bmi < 18.5) {
+			return 'Underweight';
+		} else if (bmi >= 18.5 && bmi < 25) {
+			return 'Normal weight';
+		} else if (bmi >= 25 && bmi < 30) {
+			return 'Overweight';
+		} else if (bmi >= 30 && bmi < 35) {
+			return 'Obese (Class 1)';
+		} else if (bmi >= 35 && bmi < 40) {
+			return 'Obese (Class 2)';
+		} else {
+			return 'Obese (Class 3)';
+		}
+	}
 </script>
 
 <svelte:head>
@@ -98,8 +117,16 @@
 		BMI Calculator
 	</h1>
 	<h2 class="text-3xl pt-10 text-center tracking-tight font-bold">
-		Calculate your Body Mass Index using your height and weight.
+		Calculate your Body Mass Index using your height and weight and get classified according to the <a
+			href="https://www.cdc.gov/obesity/basics/adult-defining.html"
+			class="text-white underline">CDC</a
+		>.
 	</h2>
+	<h3 class="text-xl pt-5 text-center tracking-tight font-bold">
+		BMI is certainly not the be-all and end-all of health classifications, but it <i class="italic"
+			>could</i
+		> be an indicator that's something's up
+	</h3>
 
 	<div class="pt-5">
 		<h3 class="text-3xl text-center tracking-tight font-bold">Unit</h3>
@@ -129,7 +156,7 @@
 	<div class="text-center pt-10">
 		{#if unit === 'metric'}
 			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl">
-				Your height
+				Height
 				<input
 					bind:value={heightCm}
 					placeholder="cm"
@@ -138,23 +165,23 @@
 			</label>
 		{:else if unit === 'imperial'}
 			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl text-center">
-				Your Height
+				Height
 				<div class="grid grid-cols-2 gap-4">
 					<div>
 						<input
 							bind:value={heightFt}
 							placeholder="ft"
-							class="w-32 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
 						/>
-						<span class="w-8">ft</span>
+						<!-- <span class="w-8">ft</span> -->
 					</div>
 					<div>
 						<input
 							bind:value={heightIn}
 							placeholder="in"
-							class="w-32 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
 						/>
-						<span class="w-8">in</span>
+						<!-- <span class="w-8">in</span> -->
 					</div>
 				</div>
 			</label>
@@ -163,7 +190,7 @@
 	<div class="text-center pt-10">
 		{#if unit === 'metric'}
 			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl">
-				Your weight
+				Weight
 				<input
 					bind:value={weightKg}
 					placeholder="kg"
@@ -172,25 +199,30 @@
 			</label>
 		{:else if unit === 'imperial'}
 			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl text-center">
-				Your weight
-				<div class="grid pt-2">
-					<div>
-						<input
-							bind:value={weightPounds}
-							placeholder="pounds"
-							class="w-80 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-						/>
-					</div>
-				</div></label
-			>
+				Weight
+				<input
+					bind:value={weightPounds}
+					placeholder="pounds"
+					class="w-80 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+				/>
+			</label>
 		{/if}
 	</div>
 
 	<div class="p-5 text-white flex flex-col min-h-32">
 		{#if showResult}
-			<div>
+			<div class="grid grid-cols-1 text-center">
 				<span class="font-extrabold xs:text-3xl md:text-7xl sm:text-5xl"
 					>{calculatedBmi.toFixed(1)}</span
+				>
+				<span class="font-extrabold xs:text-3xl md:text-5xl sm:text-3xl pt-2"
+					>{classifyBMI(calculatedBmi)}</span
+				>
+				<span class="xs:text-xl pt-5"
+					><a
+						href="https://www.cdc.gov/obesity/basics/adult-defining.html"
+						class="text-white underline">Classification source: The CDC</a
+					></span
 				>
 			</div>
 		{/if}
