@@ -149,17 +149,15 @@
 						<input
 							bind:value={momLengthFt}
 							placeholder="ft"
-							class="w-32 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
 						/>
-						<span class="w-8">ft</span>
 					</div>
 					<div>
 						<input
 							bind:value={momLengthIn}
 							placeholder="in"
-							class="w-32 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
 						/>
-						<span class="w-8">in</span>
 					</div>
 				</div>
 			</label>
@@ -178,22 +176,20 @@
 		{:else if unit === 'imperial'}
 			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl text-center">
 				Dad's Height
-				<div class="grid grid-cols-2 gap-4 pt-2">
+				<div class="grid grid-cols-2 gap-4">
 					<div>
 						<input
 							bind:value={dadLengthFt}
 							placeholder="ft"
-							class="w-32 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
 						/>
-						<span class="w-8">ft</span>
 					</div>
 					<div>
 						<input
 							bind:value={dadLengthIn}
 							placeholder="in"
-							class="w-32 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
 						/>
-						<span class="w-8">in</span>
 					</div>
 				</div>
 			</label>
