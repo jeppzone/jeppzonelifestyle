@@ -108,13 +108,16 @@
 </script>
 
 <svelte:head>
-	<title>BMI Calculator: Calculating your Body Mass Index</title>
-	<meta name="description" content="A calucaltor that calculates your Body Mass Index (BMI)" />
+	<title>Adult BMI Calculator: Calculating Body Mass Index for adults</title>
+	<meta
+		name="description"
+		content="A calucaltor that calculates Body Mass Index (BMI) for adults based on height and weight"
+	/>
 </svelte:head>
 
 <section>
 	<h1 class="md:text-7xl sm:text-5xl xs:text-5xl text-center tracking-tight font-bold">
-		BMI Calculator
+		Adult BMI Calculator
 	</h1>
 	<h2 class="text-3xl pt-10 text-center tracking-tight font-bold">
 		Calculate your Body Mass Index using your height and weight and get classified according to the <a
