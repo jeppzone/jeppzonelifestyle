@@ -24,7 +24,7 @@
 	 * @type {number}
 	 */
 	let momLengthIn;
-	let unit = 'imperial';
+	let unit = 'metric';
 	$: showResult =
 		((momLengthCm && dadLengthCm) || (momLengthFt && momLengthIn && dadLengthFt && dadLengthIn)) &&
 		selected !== '';
