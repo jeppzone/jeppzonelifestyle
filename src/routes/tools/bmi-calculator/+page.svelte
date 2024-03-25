@@ -111,7 +111,7 @@
 	<title>Adult BMI Calculator: Calculating Body Mass Index for adults</title>
 	<meta
 		name="description"
-		content="A calucaltor that calculates Body Mass Index (BMI) for adults based on height and weight"
+		content="Calculate your Body Mass Index (BMI) with this simple calculator. BMI is certainly not the be-all and end-all of health classifications, but it could be an indicator that's something's up"
 	/>
 </svelte:head>
 
