@@ -1,6 +1,19 @@
 <script>
 	import { page } from '$app/stores';
 	import '../app.css';
+	import { afterNavigate, beforeNavigate } from '$app/navigation';
+	import Spinner from '$lib/Spinner.svelte';
+
+	$: loading = false;
+
+	beforeNavigate(() => {
+		loading = true;
+	});
+
+	// Hook to detect when the navigation has finished
+	afterNavigate(() => {
+		loading = false;
+	});
 </script>
 
 <div class="app bg-gradient-to-r from-slate-950 to-slate-900">
@@ -19,7 +32,14 @@
 		{/if}
 	</header>
 	<main>
-		<slot />
+		{#if loading}
+			<div role="status" class="flex justify-center align-middle h-full">
+				<Spinner width="w-16" height="h-16" />
+				<span class="sr-only">Loading...</span>
+			</div>
+		{:else}
+			<slot />
+		{/if}
 	</main>
 	<footer class="text-pretty pt-10 text-center tracking-tighter">
 		<p>

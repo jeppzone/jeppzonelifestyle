@@ -94,7 +94,7 @@
 	<title>Child Height Predictor: A Calulator for predicting the height of your child</title>
 	<meta
 		name="description"
-		content="A calucaltor that predicts the height of your child using a simple, scientifically backed equation"
+		content="How tall will my child be? A calculator that predicts the height of your child using a simple, scientifically backed equation"
 	/>
 </svelte:head>
 
