@@ -1,8 +1,3 @@
-<script>
-	/** @type {import('./$types').PageData} */
-	export let data;
-</script>
-
 <section>
 	<h1 class="md:text-7xl sm:text-5xl xs:text-5xl text-center tracking-tight font-bold pt-10">
 		Tools.
@@ -13,12 +8,12 @@
 	<div class="grid grid-cols-2 gap-4 pt-10">
 		<a
 			href="/tools/child-height-calculator"
-			class="text-white text-pretty border border-white py-5 px-10 rounded-l text-xl text-center tracking-tight"
+			class="text-white text-pretty py-5 px-10 rounded-xl text-xl text-center tracking-tight font-bold bg-violet-900"
 			>Child Height Calculator</a
 		>
 		<a
 			href="/tools/bmi-calculator"
-			class="text-white text-pretty border border-white py-5 px-10 rounded-l text-xl text-center tracking-tight"
+			class="text-white text-pretty py-5 px-10 rounded-xl text-xl text-center tracking-tight font-bold bg-violet-900"
 			>BMI Calculator</a
 		>
 	</div>

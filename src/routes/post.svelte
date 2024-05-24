@@ -3,11 +3,10 @@
 	import { onMount } from 'svelte';
 
 	export let title = '';
-	export let description = '';
 	export let date = '';
 	// export let author = '';
 
-	$: publishedAt = DateTime.fromISO(date).toLocaleString(DateTime.DATE_FULL);
+	$: publishedAt = DateTime.fromISO(date).toLocaleString('en-GB');
 </script>
 
 <div class="w-full px-4">

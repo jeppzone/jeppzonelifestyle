@@ -16,7 +16,7 @@
 	});
 </script>
 
-<div class="app bg-gradient-to-r from-slate-950 to-slate-900">
+<div class="app bg-gradient-to-r from-blue-950 to-violet-950">
 	<header>
 		{#if $page.url.pathname !== '/'}
 			<nav class="w-full grid justify-center">

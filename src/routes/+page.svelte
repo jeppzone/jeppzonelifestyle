@@ -26,7 +26,7 @@
 		{#each data.posts as post}
 			<a
 				href={`/posts/${post.slug}`}
-				class="text-white text-pretty border border-white py-8 px-10 rounded-l text-xl text-center tracking-tight"
+				class="text-white text-pretty py-8 px-10 rounded-xl text-xl text-center tracking-tight font-bold bg-violet-900"
 				>{post.title}</a
 			>
 		{/each}
@@ -35,12 +35,12 @@
 	<div class="grid grid-cols-2 gap-4 pt-10">
 		<a
 			href="/tools/child-height-calculator"
-			class="text-white text-pretty border border-white py-5 px-10 rounded-l text-xl text-center tracking-tight"
+			class="text-white text-pretty py-5 px-10 rounded-xl text-xl text-center tracking-tight font-bold bg-violet-900"
 			>Child Height Calculator</a
 		>
 		<a
 			href="/tools/bmi-calculator"
-			class="text-white text-pretty border border-white py-5 px-10 rounded-l text-xl text-center tracking-tight"
+			class="text-white text-pretty py-5 px-10 rounded-xl text-xl text-center tracking-tight font-bold bg-violet-900"
 			>BMI Calculator</a
 		>
 	</div>
@@ -48,7 +48,7 @@
 	<div class="grid grid-cols-1 gap-4 pt-10">
 		<a
 			href="https://www.youtube.com/@jeppzonelifestyle"
-			class="text-white text-pretty border border-white py-5 px-10 rounded-l text-xl text-center tracking-tight"
+			class="text-white text-pretty py-5 px-10 rounded-xl text-xl text-center tracking-tight font-bold bg-violet-900"
 			>Youtube Channel</a
 		>
 	</div>

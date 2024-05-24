@@ -11,7 +11,7 @@
 		{#each data.posts as post}
 			<a
 				href={`/posts/${post.slug}`}
-				class="text-white text-pretty border border-white py-8 px-10 rounded-l text-xl text-center tracking-tight"
+				class="text-white text-pretty py-8 px-10 rounded-xl text-xl text-center tracking-tight font-bold bg-violet-900"
 				>{post.title}</a
 			>
 		{/each}
