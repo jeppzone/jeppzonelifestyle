@@ -5,6 +5,7 @@ date: '2022-11-07'
 categories:
   - gut
 published: true
+keywords: metabolic syndrome, insulin resistance, risk factors, symptoms, prevention, reversal, lifestyle factors, abdominal obesity, physical inactivity, hormonal imbalances, excess carbohydrate consumption, sleep problems, diabetes, prediabetes, exercise, low-carb diet, insulin sensitivity, research, testing, chronic disease, Alila Medical Media, Metabolical, Dr. Robert Lustig
 ---
 
 ## What is metabolic syndrome?

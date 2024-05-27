@@ -5,6 +5,7 @@ date: '2022-12-04'
 categories:
   - sleep
 published: true
+keywords: Mouth breathing, nose breathing, symptoms, dry mouth, snoring, bad breath, fatigue, nasal obstruction, sleep apnea, temperature control, filtering of toxins, humidification, increased airflow, slower breathing, gum disease, tooth decay, physical changes, behavior problems, bad breath, sleep disorders, increased blood pressure, increased pulse, remedies, surgical procedures, adenoids, deviated septum, breathing exercises, mouth taping, dental problems, dental health, sleep quality.
 ---
 
 If you saw the first season of Stranger Things, you probably remember that the first smear word that Mike taught Eleven was _mouth-breather_. But why is that a smear word in the first place? In this post, we investigate the differences between nose breathing and mouth breathing, and why we might prefer the former.

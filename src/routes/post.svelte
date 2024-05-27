@@ -1,6 +1,5 @@
 <script>
 	import { DateTime } from 'luxon';
-	import { onMount } from 'svelte';
 
 	export let title = '';
 	export let date = '';

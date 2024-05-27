@@ -5,6 +5,7 @@ date: '2022-12-29'
 categories:
   - psychology
 published: true
+keywords: New Year's resolutions, psychology, goal setting, SMART goals, achieving goals, maintaining streaks, action-oriented resolutions, avoiding failure, personal resolutions.
 ---
 
 ## New year's resolutions

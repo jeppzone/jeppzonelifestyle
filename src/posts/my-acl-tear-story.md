@@ -5,6 +5,7 @@ date: '2024-05-24'
 categories:
   - injuries
 published: true
+keywords: ACL tear, Anterior Cruciate Ligament, injury, rehabilitation, surgery, conservative approach, prehab, graft, reconstructive surgery, tendon, recovery timeline, physiotherapy, exercises, quad sets, heel slides, exercise bike, orthopedic surgeon, strength training, instability, flexibility, decision-making, physiotherapist, examination, recovery process
 ---
 
 ## How I tore my ACL

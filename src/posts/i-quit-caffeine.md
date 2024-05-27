@@ -1,10 +1,11 @@
----turkey
+---
 title: 'I quit caffeine cold turkey'
 description: "I quit caffeine cold turkey: Here's what happened. Caffeine explained"
 date: '2022-11-13'
 categories:
   - sleep
 published: true
+keywords: sleep, caffeine, quitting caffeine, cold turkey, caffeine withdrawal, caffeine effects, adenosine receptors, central nervous system stimulant, caffeine crash, caffeine metabolism, caffeine tolerance, caffeine and sleep, caffeine and anxiety, benefits of caffeine, benefits of coffee, downsides of caffeine, downsides of coffee, coffee quality, organic coffee, caffeine pause, coffee celibacy
 ---
 
 ## My experience quitting caffeine cold turkey

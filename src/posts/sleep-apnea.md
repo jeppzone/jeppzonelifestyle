@@ -5,6 +5,7 @@ date: '2022-11-27'
 categories:
   - sleep
 published: true
+keywords: Sleep apnea, obstructive sleep apnea, central sleep apnea, symptoms, risk factors, health implications, diagnosis, polysomnography, CPAP machine, mouthpiece, surgery, lifestyle changes, treatment, underlying conditions, breathing disruptions, snoring, gasping, choking, intermittent breathing, dry mouth, headaches, daytime sleepiness, irritability, focus, nasal congestion, alcohol, smoking, age, gender, obesity, family history, physical features, metabolic disorders, cardiovascular diseases, depression, mood disturbances, nonalcoholic fatty liver disease, muscle relaxants, opioids, benzodiazepines, obstructed airways, continuous positive airway pressure, sleep study, at-home sleep study, signaling failure, tongue, jaw, dental problems.
 ---
 
 Do you snore loudly at night? Do you have a hard time staying asleep? Do you wake up with a dry mouth and a headache? Then you might be suffering from a potentially serious condition called sleep apnea.

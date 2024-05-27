@@ -5,6 +5,7 @@ date: '2023-01-09'
 categories:
   - misc
 published: true
+keywords: Blood donation, importance, blood transfusions, components of blood, red blood cells, white blood cells, plasma, platelets, blood groups, ABO system, RhD system, universal donor, universal recipient, perks of donating blood, health benefits, prerequisites, tips for donating blood, personal experience, resources.
 ---
 
 ## Introduction to blood donation and why it’s so important

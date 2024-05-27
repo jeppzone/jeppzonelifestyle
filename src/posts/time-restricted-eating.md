@@ -5,6 +5,7 @@ date: '2022-11-08'
 categories:
   - diet
 published: true
+keywords: Time-restricted eating, intermittent fasting, feeding window, circadian rhythm, metabolic health, weight loss, fat loss, insulin resistance, research, studies, fasting benefits, personal experience, Satchin Panda, Dave Asprey, Dr. Sten Ekberg.
 ---
 
 ## Introduction
