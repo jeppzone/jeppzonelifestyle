@@ -82,4 +82,5 @@ Since I learned about the chronotypes, my understanding of my own sleep habits h
 - [Sleep chronotypes](https://www.sleepfoundation.org/how-sleep-works/chronotypes)
 - [f.lux software](https://justgetflux.com/)
 - [This video by Dr. Sten Ekberg](https://www.youtube.com/watch?v=CBRu9HibeNM)
+- [This article from Chopra & Nocerino on driving while fatigued](https://www.chopranocerino.com/fatigued-driving-resource/)
 - [Blue light-blocking glasses](https://biohackingcollective.se/en/products/blaljusblockerande-glasogon)

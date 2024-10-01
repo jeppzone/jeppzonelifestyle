@@ -105,3 +105,4 @@ As I mentioned in my post on [how sleep works and my experience with it](/posts/
 
 - [This article from Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/sleep-apnea/symptoms-causes/syc-20377631)
 - [This article from Sleep Foundation](https://www.sleepfoundation.org/sleep-apnea)
+- [This article from Chopra & Nocerino on driving while fatigued](https://www.chopranocerino.com/fatigued-driving-resource/)
