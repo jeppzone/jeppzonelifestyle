@@ -1,3 +1,13 @@
+---
+title: My 3-Month ACL Surgery Recovery Journey - Patellar Pain, Progress, and Patience
+description: Discover a 3-month ACL surgery recovery journey with a Bone-Patellar Tendon-Bone graft and LET procedure. Learn about managing patellar tendon pain, regaining range of motion, effective rehab exercises, and overcoming mental challenges during ACL recovery.
+date: '2024-11-06'
+categories:
+  - injuries
+published: true
+keywords: ACL surgery recovery, ACL recovery process, Bone-Patellar Tendon-Bone graft recovery, ACL rehab journey, ACL recovery timeline, ACL reconstruction with LET, Patellar tendon pain after ACL surgery, ACL surgery recovery tips, ACL surgery rehab exercises, Full extension after ACL surgery, Flexion after ACL surgery, ACL recovery milestones, Graft site pain ACL recovery, ACL surgery mental struggles, Dealing with ACL recovery setbacks, Wall slides ACL recovery, ACL recovery knee pain, Why does my patellar tendon hurt after ACL surgery?, How long does it take to recover from ACL surgery with a BPTB graft?, Tips for overcoming mental challenges during ACL recovery, ACL recovery exercises for full flexion and extension, Best exercises for ACL recovery flexion and extension, Patellar tendon pain limiting ACL rehab progress, Coping with mental setbacks during ACL recovery, Overcoming slow progress during ACL surgery recovery.
+---
+
 ## My 3-Month ACL Surgery Recovery Journey: Patellar Pain, Progress, and Patience
 
 Recovering from ACL surgery has been a ride I wasn’t quite ready for. Three months ago, I had my ACL reconstructed with a Bone-Patellar Tendon-Bone (BPTB) graft and a Lateral Extra-Articular Tenodesis (LET). I thought I’d done my research, but the reality of recovery has thrown some unexpected challenges my way. For anyone about to undergo the same procedure, here’s an in-depth look at what my experience has really been like.
