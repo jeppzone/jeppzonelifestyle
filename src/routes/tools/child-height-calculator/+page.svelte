@@ -98,162 +98,254 @@
 	/>
 </svelte:head>
 
-<section>
-	<h1 class="md:text-7xl sm:text-5xl xs:text-5xl text-center tracking-tight font-bold">
-		Child Height Calculator
-	</h1>
-	<h2 class="text-3xl pt-10 text-center tracking-tight font-bold">
-		Predict the future height of your child based on the height of the parents
-	</h2>
+<section class="max-w-4xl mx-auto px-4 py-8">
+	<div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/10">
+		<h1
+			class="md:text-6xl sm:text-5xl text-4xl text-center font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent"
+		>
+			Child Height Calculator
+		</h1>
+		<h2 class="text-2xl mt-6 text-center font-medium text-gray-300">
+			Predict your child's future height based on parental heights
+		</h2>
 
-	<div class="pt-5">
-		<h3 class="text-3xl text-center tracking-tight font-bold">Unit</h3>
-		<label class="text-3xl font-bold tracking-tight text-white xs:text-xl sm:text-2xl">
-			<input
-				checked={unit === 'metric'}
-				on:change={onChangeUnit}
-				type="radio"
-				name="unit"
-				value="metric"
-				class="w-6 h-6 text-blue-600 focus:ring-blue-500"
-			/>
-			Metric
-		</label>
-		<label class="text-3xl font-bold tracking-tight text-white p-5 xs:text-xl sm:text-2xl">
-			<input
-				checked={unit === 'imperial'}
-				on:change={onChangeUnit}
-				type="radio"
-				name="unit"
-				value="imperial"
-				class="w-6 h-6 text-blue-600 focus:ring-blue-500"
-			/>
-			Imperial
-		</label>
-	</div>
-	<div class="text-center pt-10">
-		{#if unit === 'metric'}
-			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl">
-				Mom's Height
-				<input
-					bind:value={momLengthCm}
-					placeholder="cm"
-					class="w-80 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-				/>
-			</label>
-		{:else if unit === 'imperial'}
-			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl text-center">
-				Mom's Height
-				<div class="grid grid-cols-2 gap-4">
-					<div>
+		<div class="mt-12 space-y-8">
+			<!-- Unit Selection -->
+			<div class="bg-white/5 rounded-xl p-6">
+				<h3 class="text-xl font-semibold mb-4 text-center">Measurement Unit</h3>
+				<div class="flex justify-center gap-6">
+					<label class="relative flex items-center gap-2 cursor-pointer group">
 						<input
-							bind:value={momLengthFt}
-							placeholder="ft"
-							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+							checked={unit === 'metric'}
+							on:change={onChangeUnit}
+							type="radio"
+							name="unit"
+							value="metric"
+							class="w-5 h-5 appearance-none rounded-full border-2 border-blue-400 checked:border-blue-500 checked:bg-blue-500 transition-all duration-200 ease-out cursor-pointer"
 						/>
-					</div>
-					<div>
+						<span
+							class="text-lg font-medium text-gray-200 group-hover:text-blue-400 transition-colors"
+							>Metric</span
+						>
+					</label>
+					<label class="relative flex items-center gap-2 cursor-pointer group">
 						<input
-							bind:value={momLengthIn}
-							placeholder="in"
-							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+							checked={unit === 'imperial'}
+							on:change={onChangeUnit}
+							type="radio"
+							name="unit"
+							value="imperial"
+							class="w-5 h-5 appearance-none rounded-full border-2 border-blue-400 checked:border-blue-500 checked:bg-blue-500 transition-all duration-200 ease-out cursor-pointer"
 						/>
-					</div>
+						<span
+							class="text-lg font-medium text-gray-200 group-hover:text-blue-400 transition-colors"
+							>Imperial</span
+						>
+					</label>
 				</div>
-			</label>
-		{/if}
-	</div>
-	<div class="text-center pt-10">
-		{#if unit === 'metric'}
-			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl">
-				Dad's Height
-				<input
-					bind:value={dadLengthCm}
-					placeholder="cm"
-					class="w-80 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-				/>
-			</label>
-		{:else if unit === 'imperial'}
-			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl text-center">
-				Dad's Height
-				<div class="grid grid-cols-2 gap-4">
-					<div>
-						<input
-							bind:value={dadLengthFt}
-							placeholder="ft"
-							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-						/>
-					</div>
-					<div>
-						<input
-							bind:value={dadLengthIn}
-							placeholder="in"
-							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-						/>
-					</div>
+			</div>
+
+			<!-- Parent Heights -->
+			<div class="grid md:grid-cols-2 gap-6">
+				<!-- Mom's Height -->
+				<div class="bg-white/5 rounded-xl p-6 min-h-[160px]">
+					<label class="block h-full">
+						<span class="text-xl font-semibold block mb-4 text-center text-gray-200"
+							>Mother's Height</span
+						>
+						<div class="mt-4 relative">
+							<div
+								class="absolute inset-0 w-full transition-opacity duration-300 ease-out"
+								style="opacity: {unit === 'metric' ? '1' : '0'}; pointer-events: {unit === 'metric'
+									? 'auto'
+									: 'none'}"
+							>
+								<input
+									bind:value={momLengthCm}
+									placeholder="Height in cm"
+									class="w-full text-lg bg-white/10 border border-white/20 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
+								/>
+							</div>
+							<div
+								class="absolute inset-0 w-full transition-opacity duration-300 ease-out"
+								style="opacity: {unit === 'imperial' ? '1' : '0'}; pointer-events: {unit ===
+								'imperial'
+									? 'auto'
+									: 'none'}"
+							>
+								<div class="grid grid-cols-2 gap-4">
+									<input
+										bind:value={momLengthFt}
+										placeholder="Feet"
+										class="w-full text-lg bg-white/10 border border-white/20 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
+									/>
+									<input
+										bind:value={momLengthIn}
+										placeholder="Inches"
+										class="w-full text-lg bg-white/10 border border-white/20 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
+									/>
+								</div>
+							</div>
+							<div class="w-full opacity-0 pointer-events-none">
+								<div class="grid grid-cols-2 gap-4">
+									<input disabled class="w-full text-lg p-3" />
+									<input disabled class="w-full text-lg p-3" />
+								</div>
+							</div>
+						</div>
+					</label>
 				</div>
-			</label>
-		{/if}
-	</div>
-	<div class="pt-10">
-		<h3 class="text-3xl text-center tracking-tight font-bold">Gender</h3>
-		<div>
-			<label class="text-3xl font-bold tracking-tight text-white p-5 xs:text-xl sm:text-2xl">
-				<input
-					checked={selected === 'male'}
-					on:change={onChange}
-					type="radio"
-					name="gender"
-					value="male"
-					class="w-6 h-6 text-blue-600 focus:ring-blue-500"
-				/>
-				Male
-			</label>
-			<label class="text-3xl font-bold tracking-tight text-white xs:text-xl sm:text-2xl">
-				<input
-					checked={selected === 'female'}
-					on:change={onChange}
-					type="radio"
-					name="gender"
-					value="female"
-					class="w-6 h-6 text-blue-600 focus:ring-blue-500"
-				/>
-				Female
-			</label>
-		</div>
-	</div>
-	<div class="p-5 text-white flex flex-col min-h-32">
-		{#if showResult && !isNaN(predictedLength)}
-			<div>
-				{#if unit === 'metric'}
-					<span class="font-extrabold xs:text-3xl md:text-7xl sm:text-5xl"
-						>{predictedLength} cm</span
+
+				<!-- Dad's Height -->
+				<div class="bg-white/5 rounded-xl p-6 min-h-[160px]">
+					<label class="block h-full">
+						<span class="text-xl font-semibold block mb-4 text-center text-gray-200"
+							>Father's Height</span
+						>
+						<div class="mt-4 relative">
+							<div
+								class="absolute inset-0 w-full transition-opacity duration-300 ease-out"
+								style="opacity: {unit === 'metric' ? '1' : '0'}; pointer-events: {unit === 'metric'
+									? 'auto'
+									: 'none'}"
+							>
+								<input
+									bind:value={dadLengthCm}
+									placeholder="Height in cm"
+									class="w-full text-lg bg-white/10 border border-white/20 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
+								/>
+							</div>
+							<div
+								class="absolute inset-0 w-full transition-opacity duration-300 ease-out"
+								style="opacity: {unit === 'imperial' ? '1' : '0'}; pointer-events: {unit ===
+								'imperial'
+									? 'auto'
+									: 'none'}"
+							>
+								<div class="grid grid-cols-2 gap-4">
+									<input
+										bind:value={dadLengthFt}
+										placeholder="Feet"
+										class="w-full text-lg bg-white/10 border border-white/20 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
+									/>
+									<input
+										bind:value={dadLengthIn}
+										placeholder="Inches"
+										class="w-full text-lg bg-white/10 border border-white/20 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
+									/>
+								</div>
+							</div>
+							<div class="w-full opacity-0 pointer-events-none">
+								<div class="grid grid-cols-2 gap-4">
+									<input disabled class="w-full text-lg p-3" />
+									<input disabled class="w-full text-lg p-3" />
+								</div>
+							</div>
+						</div>
+					</label>
+				</div>
+			</div>
+
+			<!-- Gender Selection -->
+			<div class="bg-white/5 rounded-xl p-6">
+				<h3 class="text-xl font-semibold mb-4 text-center text-gray-200">Child's Gender</h3>
+				<div class="flex justify-center gap-6">
+					<label class="relative flex items-center gap-2 cursor-pointer group">
+						<input
+							checked={selected === 'male'}
+							on:change={onChange}
+							type="radio"
+							name="gender"
+							value="male"
+							class="w-5 h-5 appearance-none rounded-full border-2 border-blue-400 checked:border-blue-500 checked:bg-blue-500 transition-all duration-200 ease-out cursor-pointer"
+						/>
+						<span
+							class="text-lg font-medium text-gray-200 group-hover:text-blue-400 transition-colors"
+							>Male</span
+						>
+					</label>
+					<label class="relative flex items-center gap-2 cursor-pointer group">
+						<input
+							checked={selected === 'female'}
+							on:change={onChange}
+							type="radio"
+							name="gender"
+							value="female"
+							class="w-5 h-5 appearance-none rounded-full border-2 border-blue-400 checked:border-blue-500 checked:bg-blue-500 transition-all duration-200 ease-out cursor-pointer"
+						/>
+						<span
+							class="text-lg font-medium text-gray-200 group-hover:text-blue-400 transition-colors"
+							>Female</span
+						>
+					</label>
+				</div>
+			</div>
+
+			<!-- Results -->
+			<div class="min-h-[160px]">
+				{#if showResult && !isNaN(predictedLength)}
+					<div
+						class="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-8 text-center transform transition-all duration-300 ease-out"
 					>
+						<h3 class="text-xl font-semibold mb-2 text-gray-200">Predicted Height</h3>
+						{#if unit === 'metric'}
+							<div class="text-5xl font-bold text-white">
+								{Math.round(predictedLength)} <span class="text-3xl text-gray-300">cm</span>
+							</div>
+						{:else}
+							<div class="text-5xl font-bold text-white">
+								{toFeet(predictedLength).feet}<span class="text-3xl text-gray-300">ft</span>
+								{toFeet(predictedLength).inches}<span class="text-3xl text-gray-300">in</span>
+							</div>
+						{/if}
+					</div>
 				{:else}
-					<span class="font-extrabold xs:text-3xl md:text-7xl sm:text-5xl"
-						>{toFeet(predictedLength).feet} ft {toFeet(predictedLength).inches} in</span
+					<div
+						class="bg-white/5 rounded-xl p-8 text-center h-full flex items-center justify-center"
 					>
+						<p class="text-gray-400 text-lg">
+							Enter parent heights and select child's gender to see prediction
+						</p>
+					</div>
 				{/if}
 			</div>
-		{/if}
+		</div>
 	</div>
 </section>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.1;
+	input[type='radio']::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 0.75rem;
+		height: 0.75rem;
+		border-radius: 50%;
+		background-color: white;
+		opacity: 0;
+		transition: opacity 0.2s ease-out;
+		pointer-events: none;
+		z-index: 1;
 	}
 
 	input[type='radio'] {
-		outline: none;
-		box-shadow: none;
+		position: relative;
+		z-index: 0;
 	}
 
-	h1 {
-		width: 100%;
+	input[type='radio']:checked::after {
+		opacity: 1;
+	}
+
+	/* Remove spinners from number inputs */
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number']::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	input[type='number'] {
+		-moz-appearance: textfield;
 	}
 </style>
