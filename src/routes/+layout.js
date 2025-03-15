@@ -1,6 +1,9 @@
-export const prerender = true;
+export const prerender = false;
+export const ssr = true;
 
 export const load = ({ url }) => {
+	const canonicalPath = url.pathname === '/' ? '' : url.pathname;
+
 	return {
 		url: url.pathname,
 		meta: {
@@ -10,7 +13,7 @@ export const load = ({ url }) => {
 			keywords:
 				'health, wellness, personal development, lifestyle, fitness, mental health, productivity tools',
 			ogImage: 'https://jeppzone.com/og-image.jpg', // Make sure to create and add this image
-			canonical: `https://jeppzone.com${url.pathname}`
+			canonical: `https://jeppzone.com${canonicalPath}`
 		}
 	};
 };
