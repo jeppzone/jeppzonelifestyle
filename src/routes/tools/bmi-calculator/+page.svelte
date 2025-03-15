@@ -115,215 +115,138 @@
 	/>
 </svelte:head>
 
-<section class="max-w-4xl mx-auto px-4 py-8">
-	<div class="bg-white/5 backdrop-blur-lg rounded-2xl p-8 shadow-2xl border border-white/10">
-		<h1
-			class="md:text-6xl sm:text-5xl text-4xl text-center font-bold bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent"
-		>
-			Adult BMI Calculator
-		</h1>
-		<h2 class="text-2xl mt-6 text-center font-medium text-gray-300">
-			Calculate your Body Mass Index using your height and weight and get classified according to
-			the
-			<a
-				href="https://www.cdc.gov/obesity/basics/adult-defining.html"
-				class="text-blue-400 hover:text-blue-300 transition-colors">CDC</a
-			>.
-		</h2>
-		<p class="text-lg mt-4 text-center text-gray-400">
-			BMI is certainly not the be-all and end-all of health classifications, but it <i
-				class="italic">could</i
-			> be an indicator that's something's up
-		</p>
+<section>
+	<h1 class="md:text-7xl sm:text-5xl xs:text-5xl text-center tracking-tight font-bold">
+		Adult BMI Calculator
+	</h1>
+	<h2 class="text-3xl pt-10 text-center tracking-tight font-bold">
+		Calculate your Body Mass Index using your height and weight and get classified according to the <a
+			href="https://www.cdc.gov/obesity/basics/adult-defining.html"
+			class="text-white underline">CDC</a
+		>.
+	</h2>
+	<h3 class="text-xl pt-5 text-center tracking-tight font-bold">
+		BMI is certainly not the be-all and end-all of health classifications, but it <i class="italic"
+			>could</i
+		> be an indicator that's something's up
+	</h3>
 
-		<div class="mt-12 space-y-8">
-			<!-- Unit Selection -->
-			<div class="bg-white/5 rounded-xl p-6">
-				<h3 class="text-xl font-semibold mb-4 text-center">Measurement Unit</h3>
-				<div class="flex justify-center gap-6">
-					<label class="relative flex items-center gap-2 cursor-pointer group">
+	<div class="pt-5">
+		<h3 class="text-3xl text-center tracking-tight font-bold">Unit</h3>
+		<label class="text-3xl font-bold tracking-tight text-white xs:text-xl sm:text-2xl">
+			<input
+				checked={unit === 'metric'}
+				on:change={onChangeUnit}
+				type="radio"
+				name="unit"
+				value="metric"
+				class="w-6 h-6 text-blue-600 focus:ring-blue-500"
+			/>
+			Metric
+		</label>
+		<label class="text-3xl font-bold tracking-tight text-white p-5 xs:text-xl sm:text-2xl">
+			<input
+				checked={unit === 'imperial'}
+				on:change={onChangeUnit}
+				type="radio"
+				name="unit"
+				value="imperial"
+				class="w-6 h-6 text-blue-600 focus:ring-blue-500"
+			/>
+			Imperial
+		</label>
+	</div>
+	<div class="text-center pt-10">
+		{#if unit === 'metric'}
+			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl">
+				Height
+				<input
+					bind:value={heightCm}
+					placeholder="cm"
+					class="w-80 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+				/>
+			</label>
+		{:else if unit === 'imperial'}
+			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl text-center">
+				Height
+				<div class="grid grid-cols-2 gap-4">
+					<div>
 						<input
-							checked={unit === 'metric'}
-							on:change={onChangeUnit}
-							type="radio"
-							name="unit"
-							value="metric"
-							class="w-5 h-5 appearance-none rounded-full border-2 border-blue-400 checked:border-blue-500 checked:bg-blue-500 transition-all duration-200 ease-out cursor-pointer"
+							bind:value={heightFt}
+							placeholder="ft"
+							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
 						/>
-						<span
-							class="text-lg font-medium text-gray-200 group-hover:text-blue-400 transition-colors"
-							>Metric</span
-						>
-					</label>
-					<label class="relative flex items-center gap-2 cursor-pointer group">
+						<!-- <span class="w-8">ft</span> -->
+					</div>
+					<div>
 						<input
-							checked={unit === 'imperial'}
-							on:change={onChangeUnit}
-							type="radio"
-							name="unit"
-							value="imperial"
-							class="w-5 h-5 appearance-none rounded-full border-2 border-blue-400 checked:border-blue-500 checked:bg-blue-500 transition-all duration-200 ease-out cursor-pointer"
+							bind:value={heightIn}
+							placeholder="in"
+							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
 						/>
-						<span
-							class="text-lg font-medium text-gray-200 group-hover:text-blue-400 transition-colors"
-							>Imperial</span
-						>
-					</label>
+						<!-- <span class="w-8">in</span> -->
+					</div>
 				</div>
-			</div>
+			</label>
+		{/if}
+	</div>
+	<div class="text-center pt-10">
+		{#if unit === 'metric'}
+			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl">
+				Weight
+				<input
+					bind:value={weightKg}
+					placeholder="kg"
+					class="w-80 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+				/>
+			</label>
+		{:else if unit === 'imperial'}
+			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl text-center">
+				Weight
+				<input
+					bind:value={weightPounds}
+					placeholder="pounds"
+					class="w-80 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+				/>
+			</label>
+		{/if}
+	</div>
 
-			<!-- Height Input -->
-			<div class="bg-white/5 rounded-xl p-6 min-h-[160px]">
-				<label class="block h-full">
-					<span class="text-xl font-semibold block mb-4 text-center text-gray-200">Height</span>
-					<div class="mt-4 relative">
-						<div
-							class="absolute inset-0 w-full transition-opacity duration-300 ease-out"
-							style="opacity: {unit === 'metric' ? '1' : '0'}; pointer-events: {unit === 'metric'
-								? 'auto'
-								: 'none'}"
-						>
-							<input
-								bind:value={heightCm}
-								placeholder="Height in cm"
-								class="w-full text-lg bg-white/10 border border-white/20 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
-							/>
-						</div>
-						<div
-							class="absolute inset-0 w-full transition-opacity duration-300 ease-out"
-							style="opacity: {unit === 'imperial' ? '1' : '0'}; pointer-events: {unit ===
-							'imperial'
-								? 'auto'
-								: 'none'}"
-						>
-							<div class="grid grid-cols-2 gap-4">
-								<input
-									bind:value={heightFt}
-									placeholder="Feet"
-									class="w-full text-lg bg-white/10 border border-white/20 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
-								/>
-								<input
-									bind:value={heightIn}
-									placeholder="Inches"
-									class="w-full text-lg bg-white/10 border border-white/20 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
-								/>
-							</div>
-						</div>
-						<div class="w-full opacity-0 pointer-events-none">
-							<div class="grid grid-cols-2 gap-4">
-								<input disabled class="w-full text-lg p-3" />
-								<input disabled class="w-full text-lg p-3" />
-							</div>
-						</div>
-					</div>
-				</label>
+	<div class="p-5 text-white flex flex-col min-h-32">
+		{#if showResult}
+			<div class="grid grid-cols-1 text-center">
+				<span class="font-extrabold xs:text-3xl md:text-7xl sm:text-5xl"
+					>{calculatedBmi.toFixed(1)}</span
+				>
+				<span class="font-extrabold xs:text-3xl md:text-5xl sm:text-3xl pt-2"
+					>{classifyBMI(calculatedBmi)}</span
+				>
+				<span class="xs:text-xl pt-5"
+					><a
+						href="https://www.cdc.gov/obesity/basics/adult-defining.html"
+						class="text-white underline">Classification source: The CDC</a
+					></span
+				>
 			</div>
-
-			<!-- Weight Input -->
-			<div class="bg-white/5 rounded-xl p-6 min-h-[160px]">
-				<label class="block h-full">
-					<span class="text-xl font-semibold block mb-4 text-center text-gray-200">Weight</span>
-					<div class="mt-4 relative">
-						<div
-							class="absolute inset-0 w-full transition-opacity duration-300 ease-out"
-							style="opacity: {unit === 'metric' ? '1' : '0'}; pointer-events: {unit === 'metric'
-								? 'auto'
-								: 'none'}"
-						>
-							<input
-								bind:value={weightKg}
-								placeholder="Weight in kg"
-								class="w-full text-lg bg-white/10 border border-white/20 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
-							/>
-						</div>
-						<div
-							class="absolute inset-0 w-full transition-opacity duration-300 ease-out"
-							style="opacity: {unit === 'imperial' ? '1' : '0'}; pointer-events: {unit ===
-							'imperial'
-								? 'auto'
-								: 'none'}"
-						>
-							<input
-								bind:value={weightPounds}
-								placeholder="Weight in pounds"
-								class="w-full text-lg bg-white/10 border border-white/20 text-white rounded-lg p-3 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200 placeholder:text-gray-400"
-							/>
-						</div>
-						<div class="w-full opacity-0 pointer-events-none">
-							<input disabled class="w-full text-lg p-3" />
-						</div>
-					</div>
-				</label>
-			</div>
-
-			<!-- Results -->
-			<div class="min-h-[160px]">
-				{#if showResult}
-					<div
-						class="bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl p-8 text-center transform transition-all duration-300 ease-out"
-					>
-						<div class="space-y-4">
-							<div class="text-5xl font-bold text-white">
-								{calculatedBmi.toFixed(1)}
-							</div>
-							<div class="text-2xl font-semibold text-gray-200">
-								{classifyBMI(calculatedBmi)}
-							</div>
-							<div class="text-sm text-gray-400">
-								<a
-									href="https://www.cdc.gov/obesity/basics/adult-defining.html"
-									class="text-blue-400 hover:text-blue-300 transition-colors"
-								>
-									Classification source: The CDC
-								</a>
-							</div>
-						</div>
-					</div>
-				{:else}
-					<div
-						class="bg-white/5 rounded-xl p-8 text-center h-full flex items-center justify-center"
-					>
-						<p class="text-gray-400 text-lg">Enter your height and weight to see your BMI</p>
-					</div>
-				{/if}
-			</div>
-		</div>
+		{/if}
 	</div>
 </section>
 
 <style>
-	input[type='radio']::after {
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 0.75rem;
-		height: 0.75rem;
-		border-radius: 50%;
-		background-color: white;
-		opacity: 0;
-		transition: opacity 0.2s ease-out;
-		pointer-events: none;
-		z-index: 1;
+	section {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		flex: 0.1;
 	}
 
 	input[type='radio'] {
-		position: relative;
-		z-index: 0;
+		outline: none;
+		box-shadow: none;
 	}
 
-	input[type='radio']:checked::after {
-		opacity: 1;
-	}
-
-	/* Remove spinners from number inputs */
-	input[type='number']::-webkit-inner-spin-button,
-	input[type='number']::-webkit-outer-spin-button {
-		-webkit-appearance: none;
-		margin: 0;
-	}
-	input[type='number'] {
-		-moz-appearance: textfield;
+	h1 {
+		width: 100%;
 	}
 </style>
