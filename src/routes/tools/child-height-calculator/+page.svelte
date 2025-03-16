@@ -1,243 +1,276 @@
-<script>
-	let selected = '';
-	/**
-	 * @type {number}
-	 */
-	let dadLengthCm;
-	/**
-	 * @type {number}
-	 */
-	let dadLengthFt;
-	/**
-	 * @type {number}
-	 */
-	let dadLengthIn;
-	/**
-	 * @type {number}
-	 */
-	let momLengthCm;
-	/**
-	 * @type {number}
-	 */
-	let momLengthFt;
-	/**
-	 * @type {number}
-	 */
-	let momLengthIn;
-	let unit = 'metric';
-	$: showResult =
-		((momLengthCm && dadLengthCm) || (momLengthFt && momLengthIn && dadLengthFt && dadLengthIn)) &&
-		selected !== '';
-	$: predictedLength =
-		selected == 'male'
-			? unit === 'metric'
-				? (+momLengthCm + 13 + +dadLengthCm) / 2
-				: (+toCm(momLengthFt, momLengthIn) + 13 + +toCm(dadLengthFt, dadLengthIn)) / 2
-			: unit === 'metric'
-				? (+dadLengthCm - 13 + +momLengthCm) / 2
-				: (+toCm(momLengthFt, momLengthIn) - 13 + +toCm(dadLengthFt, dadLengthIn)) / 2;
+<script lang="ts">
+	import { fade } from 'svelte/transition';
 
-	/**
-	 * @param {{ currentTarget: { value: string; }; }} event
-	 */
-	function onChange(event) {
+	let selected = '';
+	let dadLengthCm: number | null = null;
+	let dadLengthFt: number | null = null;
+	let dadLengthIn: number | null = null;
+	let momLengthCm: number | null = null;
+	let momLengthFt: number | null = null;
+	let momLengthIn: number | null = null;
+	let unit = 'metric';
+
+	$: showResult =
+		((momLengthCm !== null && dadLengthCm !== null) ||
+			(momLengthFt !== null &&
+				momLengthIn !== null &&
+				dadLengthFt !== null &&
+				dadLengthIn !== null)) &&
+		selected !== '';
+
+	$: predictedLength = showResult
+		? selected === 'male'
+			? unit === 'metric'
+				? (Number(momLengthCm) + 13 + Number(dadLengthCm)) / 2
+				: (toCm(Number(momLengthFt), Number(momLengthIn)) +
+						13 +
+						toCm(Number(dadLengthFt), Number(dadLengthIn))) /
+					2
+			: unit === 'metric'
+				? (Number(dadLengthCm) - 13 + Number(momLengthCm)) / 2
+				: (toCm(Number(momLengthFt), Number(momLengthIn)) -
+						13 +
+						toCm(Number(dadLengthFt), Number(dadLengthIn))) /
+					2
+		: 0;
+
+	function onChange(event: { currentTarget: { value: string } }) {
 		selected = event.currentTarget.value;
 	}
 
-	/**
-	 * @param {{ currentTarget: { value: string; }; }} event
-	 */
-	function onChangeUnit(event) {
+	function onChangeUnit(event: { currentTarget: { value: string } }) {
 		unit = event.currentTarget.value;
 		if (unit === 'metric') {
-			if (dadLengthFt && dadLengthIn) {
+			if (dadLengthFt !== null && dadLengthIn !== null) {
 				dadLengthCm = toCm(dadLengthFt, dadLengthIn);
 			}
-			if (momLengthFt && momLengthIn) {
+			if (momLengthFt !== null && momLengthIn !== null) {
 				momLengthCm = toCm(momLengthFt, momLengthIn);
 			}
 		} else if (unit === 'imperial') {
-			if (dadLengthCm) {
+			if (dadLengthCm !== null) {
 				const feetAndInches = toFeet(dadLengthCm);
 				dadLengthFt = feetAndInches.feet;
 				dadLengthIn = feetAndInches.inches;
 			}
-			if (momLengthCm) {
+			if (momLengthCm !== null) {
 				const feetAndInches = toFeet(momLengthCm);
 				momLengthFt = feetAndInches.feet;
 				momLengthIn = feetAndInches.inches;
 			}
 		}
 	}
-	/**
-	 * @param {number} cm
-	 */
-	function toFeet(cm) {
+
+	function toFeet(cm: number): { feet: number; inches: number } {
 		var realFeet = (cm * 0.3937) / 12;
 		var feet = Math.floor(realFeet);
 		var inches = Math.round((realFeet - feet) * 12);
-		return { feet: feet, inches: inches };
+		return { feet, inches };
 	}
 
-	/**
-	 * @param {number} feet
-	 * @param {number} inches
-	 */
-	function toCm(feet, inches) {
-		const totalInches = feet * 12 + +inches;
+	function toCm(feet: number, inches: number): number {
+		const totalInches = feet * 12 + Number(inches);
 		const centimeters = Math.round(totalInches * 2.54);
 		return centimeters;
 	}
 </script>
 
 <svelte:head>
-	<title>Child Height Predictor: A Calulator for predicting the height of your child</title>
+	<title>Child Height Calculator | Jeppzone Lifestyle</title>
 	<meta
 		name="description"
-		content="How tall will my child be? A calculator that predicts the height of your child using a simple, scientifically backed equation"
+		content="Predict your child's adult height using this scientifically-based calculator that takes into account both parents' heights."
 	/>
 </svelte:head>
 
-<section>
-	<h1 class="md:text-7xl sm:text-5xl xs:text-5xl text-center tracking-tight font-bold">
-		Child Height Calculator
-	</h1>
-	<h2 class="text-3xl pt-10 text-center tracking-tight font-bold">
-		Predict the future height of your child based on the height of the parents
-	</h2>
-
-	<div class="pt-5">
-		<h3 class="text-3xl text-center tracking-tight font-bold">Unit</h3>
-		<label class="text-3xl font-bold tracking-tight text-white xs:text-xl sm:text-2xl">
-			<input
-				checked={unit === 'metric'}
-				on:change={onChangeUnit}
-				type="radio"
-				name="unit"
-				value="metric"
-				class="w-6 h-6 text-blue-600 focus:ring-blue-500"
-			/>
-			Metric
-		</label>
-		<label class="text-3xl font-bold tracking-tight text-white p-5 xs:text-xl sm:text-2xl">
-			<input
-				checked={unit === 'imperial'}
-				on:change={onChangeUnit}
-				type="radio"
-				name="unit"
-				value="imperial"
-				class="w-6 h-6 text-blue-600 focus:ring-blue-500"
-			/>
-			Imperial
-		</label>
-	</div>
-	<div class="text-center pt-10">
-		{#if unit === 'metric'}
-			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl">
-				Mom's Height
-				<input
-					bind:value={momLengthCm}
-					placeholder="cm"
-					class="w-80 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-				/>
-			</label>
-		{:else if unit === 'imperial'}
-			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl text-center">
-				Mom's Height
-				<div class="grid grid-cols-2 gap-4">
-					<div>
-						<input
-							bind:value={momLengthFt}
-							placeholder="ft"
-							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-						/>
-					</div>
-					<div>
-						<input
-							bind:value={momLengthIn}
-							placeholder="in"
-							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-						/>
-					</div>
-				</div>
-			</label>
-		{/if}
-	</div>
-	<div class="text-center pt-10">
-		{#if unit === 'metric'}
-			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl">
-				Dad's Height
-				<input
-					bind:value={dadLengthCm}
-					placeholder="cm"
-					class="w-80 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-				/>
-			</label>
-		{:else if unit === 'imperial'}
-			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl text-center">
-				Dad's Height
-				<div class="grid grid-cols-2 gap-4">
-					<div>
-						<input
-							bind:value={dadLengthFt}
-							placeholder="ft"
-							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-						/>
-					</div>
-					<div>
-						<input
-							bind:value={dadLengthIn}
-							placeholder="in"
-							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-						/>
-					</div>
-				</div>
-			</label>
-		{/if}
-	</div>
-	<div class="pt-10">
-		<h3 class="text-3xl text-center tracking-tight font-bold">Gender</h3>
-		<div>
-			<label class="text-3xl font-bold tracking-tight text-white p-5 xs:text-xl sm:text-2xl">
-				<input
-					checked={selected === 'male'}
-					on:change={onChange}
-					type="radio"
-					name="gender"
-					value="male"
-					class="w-6 h-6 text-blue-600 focus:ring-blue-500"
-				/>
-				Male
-			</label>
-			<label class="text-3xl font-bold tracking-tight text-white xs:text-xl sm:text-2xl">
-				<input
-					checked={selected === 'female'}
-					on:change={onChange}
-					type="radio"
-					name="gender"
-					value="female"
-					class="w-6 h-6 text-blue-600 focus:ring-blue-500"
-				/>
-				Female
-			</label>
+<div class="max-w-3xl mx-auto space-y-12">
+	<!-- Header -->
+	<section class="text-center space-y-6">
+		<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-slide-up">
+			Child Height Calculator
+		</h1>
+		<div class="space-y-4 animate-slide-up">
+			<p class="text-xl text-text-muted">
+				Predict your child's adult height based on parental heights using a scientifically-backed
+				formula.
+			</p>
+			<p class="text-sm text-text-muted italic">
+				Note: This is an estimate based on averages. Individual results may vary due to genetics,
+				nutrition, and other factors.
+			</p>
 		</div>
-	</div>
-	<div class="p-5 text-white flex flex-col min-h-32">
-		{#if showResult && !isNaN(predictedLength)}
-			<div>
+	</section>
+
+	<!-- Calculator Card -->
+	<div class="card space-y-8">
+		<!-- Unit Selection -->
+		<div class="space-y-4">
+			<h2 class="text-xl font-semibold">Select Unit System</h2>
+			<div class="flex gap-4">
+				<label class="flex items-center space-x-2 cursor-pointer">
+					<input
+						checked={unit === 'metric'}
+						on:change={onChangeUnit}
+						type="radio"
+						name="unit"
+						value="metric"
+						class="w-4 h-4 text-primary focus:ring-primary border-slate-600 bg-slate-800"
+					/>
+					<span>Metric</span>
+				</label>
+				<label class="flex items-center space-x-2 cursor-pointer">
+					<input
+						checked={unit === 'imperial'}
+						on:change={onChangeUnit}
+						type="radio"
+						name="unit"
+						value="imperial"
+						class="w-4 h-4 text-primary focus:ring-primary border-slate-600 bg-slate-800"
+					/>
+					<span>Imperial</span>
+				</label>
+			</div>
+		</div>
+
+		<!-- Parent Heights -->
+		<div class="space-y-6">
+			<div class="space-y-4">
+				<h2 class="text-xl font-semibold">Mother's Height</h2>
 				{#if unit === 'metric'}
-					<span class="font-extrabold xs:text-3xl md:text-7xl sm:text-5xl"
-						>{predictedLength} cm</span
-					>
+					<div class="relative">
+						<input
+							bind:value={momLengthCm}
+							type="number"
+							placeholder="Enter height"
+							class="input pr-12"
+						/>
+						<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">cm</span>
+					</div>
 				{:else}
-					<span class="font-extrabold xs:text-3xl md:text-7xl sm:text-5xl"
-						>{toFeet(predictedLength).feet} ft {toFeet(predictedLength).inches} in</span
-					>
+					<div class="grid grid-cols-2 gap-4">
+						<div class="relative">
+							<input
+								bind:value={momLengthFt}
+								type="number"
+								placeholder="Feet"
+								class="input pr-12"
+							/>
+							<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">ft</span>
+						</div>
+						<div class="relative">
+							<input
+								bind:value={momLengthIn}
+								type="number"
+								placeholder="Inches"
+								class="input pr-12"
+							/>
+							<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">in</span>
+						</div>
+					</div>
 				{/if}
+			</div>
+
+			<div class="space-y-4">
+				<h2 class="text-xl font-semibold">Father's Height</h2>
+				{#if unit === 'metric'}
+					<div class="relative">
+						<input
+							bind:value={dadLengthCm}
+							type="number"
+							placeholder="Enter height"
+							class="input pr-12"
+						/>
+						<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">cm</span>
+					</div>
+				{:else}
+					<div class="grid grid-cols-2 gap-4">
+						<div class="relative">
+							<input
+								bind:value={dadLengthFt}
+								type="number"
+								placeholder="Feet"
+								class="input pr-12"
+							/>
+							<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">ft</span>
+						</div>
+						<div class="relative">
+							<input
+								bind:value={dadLengthIn}
+								type="number"
+								placeholder="Inches"
+								class="input pr-12"
+							/>
+							<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">in</span>
+						</div>
+					</div>
+				{/if}
+			</div>
+		</div>
+
+		<!-- Gender Selection -->
+		<div class="space-y-4">
+			<h2 class="text-xl font-semibold">Child's Gender</h2>
+			<div class="flex gap-6">
+				<label class="flex items-center space-x-2 cursor-pointer">
+					<input
+						checked={selected === 'male'}
+						on:change={onChange}
+						type="radio"
+						name="gender"
+						value="male"
+						class="w-4 h-4 text-primary focus:ring-primary border-slate-600 bg-slate-800"
+					/>
+					<span>Male</span>
+				</label>
+				<label class="flex items-center space-x-2 cursor-pointer">
+					<input
+						checked={selected === 'female'}
+						on:change={onChange}
+						type="radio"
+						name="gender"
+						value="female"
+						class="w-4 h-4 text-primary focus:ring-primary border-slate-600 bg-slate-800"
+					/>
+					<span>Female</span>
+				</label>
+			</div>
+		</div>
+
+		<!-- Results -->
+		{#if showResult && !isNaN(predictedLength)}
+			<div class="pt-4 border-t border-slate-800" transition:fade>
+				<div class="space-y-4 text-center">
+					<div class="space-y-2">
+						<h3 class="text-4xl font-bold">
+							{#if unit === 'metric'}
+								{Math.round(predictedLength)} cm
+							{:else}
+								{toFeet(predictedLength).feet} ft {toFeet(predictedLength).inches} in
+							{/if}
+						</h3>
+						<p class="text-sm text-text-muted">Predicted Adult Height</p>
+					</div>
+					<p class="text-sm text-text-muted">
+						This prediction has a margin of error of approximately ±4 cm (±1.6 inches)
+					</p>
+				</div>
 			</div>
 		{/if}
 	</div>
-</section>
+
+	<!-- Disclaimer -->
+	<div class="text-center text-sm text-text-muted space-y-2">
+		<p>
+			This calculator uses the mid-parental height method, which is based on statistical averages.
+			The actual adult height can vary due to many factors including genetics, nutrition, and
+			environment.
+		</p>
+		<p>
+			For the most accurate predictions, consult with a pediatrician who can take into account
+			additional factors such as the child's current growth curve.
+		</p>
+	</div>
+</div>
 
 <style>
 	section {

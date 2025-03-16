@@ -1,52 +1,42 @@
-<script>
-	/**
-	 * @type {number}
-	 */
-	let heightCm;
-	/**
-	 * @type {number}
-	 */
-	let heightFt;
-	/**
-	 * @type {number}
-	 */
-	let heightIn;
-	/**
-	 * @type {number}
-	 */
-	let weightKg;
-	/**
-	 * @type {number}
-	 */
-	let weightPounds;
+<script lang="ts">
+	import { fade } from 'svelte/transition';
+
+	let heightCm: number | null = null;
+	let heightFt: number | null = null;
+	let heightIn: number | null = null;
+	let weightKg: number | null = null;
+	let weightPounds: number | null = null;
 	let unit = 'metric';
+
 	$: showResult =
-		(!isNaN(weightKg) && !isNaN(heightCm)) ||
-		(!isNaN(weightPounds) && !isNaN(heightFt) && !isNaN(heightIn));
-	$: calculatedBmi =
-		unit === 'metric'
-			? +weightKg / Math.pow(+heightCm / 100, 2)
-			: toKg(weightPounds) / Math.pow(toCm(heightFt, heightIn) / 100, 2);
+		(weightKg !== null && heightCm !== null) ||
+		(weightPounds !== null && heightFt !== null && heightIn !== null);
+
+	$: calculatedBmi = showResult
+		? unit === 'metric'
+			? Number(weightKg) / Math.pow(Number(heightCm) / 100, 2)
+			: toKg(Number(weightPounds)) / Math.pow(toCm(Number(heightFt), Number(heightIn)) / 100, 2)
+		: 0;
 
 	/**
 	 * @param {{ currentTarget: { value: string; }; }} event
 	 */
-	function onChangeUnit(event) {
+	function onChangeUnit(event: { currentTarget: { value: string } }) {
 		unit = event.currentTarget.value;
 		if (unit === 'metric') {
-			if (heightFt && heightIn) {
+			if (heightFt !== null && heightIn !== null) {
 				heightCm = toCm(heightFt, heightIn);
 			}
-			if (weightPounds) {
+			if (weightPounds !== null) {
 				weightKg = toKg(weightPounds);
 			}
 		} else if (unit === 'imperial') {
-			if (heightCm) {
+			if (heightCm !== null) {
 				const feetAndInches = toFeet(heightCm);
 				heightFt = feetAndInches.feet;
 				heightIn = feetAndInches.inches;
 			}
-			if (weightKg) {
+			if (weightKg !== null) {
 				weightPounds = toPounds(weightKg);
 			}
 		}
@@ -54,19 +44,19 @@
 	/**
 	 * @param {number} cm
 	 */
-	function toFeet(cm) {
+	function toFeet(cm: number): { feet: number; inches: number } {
 		var realFeet = (cm * 0.3937) / 12;
 		var feet = Math.floor(realFeet);
 		var inches = Math.round((realFeet - feet) * 12);
-		return { feet: feet, inches: inches };
+		return { feet, inches };
 	}
 
 	/**
 	 * @param {number} feet
 	 * @param {number} inches
 	 */
-	function toCm(feet, inches) {
-		const totalInches = feet * 12 + +inches;
+	function toCm(feet: number, inches: number): number {
+		const totalInches = feet * 12 + Number(inches);
 		const centimeters = Math.round(totalInches * 2.54);
 		return centimeters;
 	}
@@ -74,7 +64,7 @@
 	/**
 	 * @param {number} pounds
 	 */
-	function toKg(pounds) {
+	function toKg(pounds: number): number {
 		// 1 pound is approximately equal to 0.45359237 kilograms
 		return parseFloat((pounds * 0.45359237).toFixed(1));
 	}
@@ -82,7 +72,7 @@
 	/**
 	 * @param {number} kg
 	 */
-	function toPounds(kg) {
+	function toPounds(kg: number): number {
 		// 1 kilogram is approximately equal to 2.20462262 pounds
 		return parseFloat((kg * 2.20462262).toFixed(1));
 	}
@@ -90,147 +80,175 @@
 	/**
 	 * @param {number} bmi
 	 */
-	function classifyBMI(bmi) {
+	function classifyBMI(bmi: number): { category: string; color: string } {
 		if (bmi < 18.5) {
-			return 'Underweight';
+			return { category: 'Underweight', color: 'text-yellow-400' };
 		} else if (bmi >= 18.5 && bmi < 25) {
-			return 'Normal weight';
+			return { category: 'Normal weight', color: 'text-green-400' };
 		} else if (bmi >= 25 && bmi < 30) {
-			return 'Overweight';
+			return { category: 'Overweight', color: 'text-yellow-400' };
 		} else if (bmi >= 30 && bmi < 35) {
-			return 'Obese (Class 1)';
+			return { category: 'Obese (Class 1)', color: 'text-orange-400' };
 		} else if (bmi >= 35 && bmi < 40) {
-			return 'Obese (Class 2)';
+			return { category: 'Obese (Class 2)', color: 'text-red-400' };
 		} else {
-			return 'Obese (Class 3)';
+			return { category: 'Obese (Class 3)', color: 'text-red-500' };
 		}
 	}
 </script>
 
 <svelte:head>
-	<title>Adult BMI Calculator: Calculating Body Mass Index for adults</title>
+	<title>BMI Calculator | Jeppzone Lifestyle</title>
 	<meta
 		name="description"
-		content="Calculate your Body Mass Index (BMI) with this simple calculator. BMI is certainly not the be-all and end-all of health classifications, but it could be an indicator that's something's up"
+		content="Calculate your Body Mass Index (BMI) with this simple calculator. While BMI is not a complete measure of health, it can be a useful screening tool."
 	/>
 </svelte:head>
 
-<section>
-	<h1 class="md:text-7xl sm:text-5xl xs:text-5xl text-center tracking-tight font-bold">
-		Adult BMI Calculator
-	</h1>
-	<h2 class="text-3xl pt-10 text-center tracking-tight font-bold">
-		Calculate your Body Mass Index using your height and weight and get classified according to the <a
-			href="https://www.cdc.gov/obesity/basics/adult-defining.html"
-			class="text-white underline">CDC</a
-		>.
-	</h2>
-	<h3 class="text-xl pt-5 text-center tracking-tight font-bold">
-		BMI is certainly not the be-all and end-all of health classifications, but it <i class="italic"
-			>could</i
-		> be an indicator that's something's up
-	</h3>
+<div class="max-w-3xl mx-auto space-y-12">
+	<!-- Header -->
+	<section class="text-center space-y-6">
+		<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-slide-up">
+			BMI Calculator
+		</h1>
+		<div class="space-y-4 animate-slide-up">
+			<p class="text-xl text-text-muted">
+				Calculate your Body Mass Index using your height and weight according to the <a
+					href="https://www.cdc.gov/obesity/basics/adult-defining.html"
+					class="text-primary hover:text-primary-dark transition-colors"
+					target="_blank"
+					rel="noopener noreferrer">CDC</a
+				> guidelines.
+			</p>
+			<p class="text-sm text-text-muted italic">
+				Note: BMI is not a complete measure of body fat or overall health, but it can be a useful
+				screening tool.
+			</p>
+		</div>
+	</section>
 
-	<div class="pt-5">
-		<h3 class="text-3xl text-center tracking-tight font-bold">Unit</h3>
-		<label class="text-3xl font-bold tracking-tight text-white xs:text-xl sm:text-2xl">
-			<input
-				checked={unit === 'metric'}
-				on:change={onChangeUnit}
-				type="radio"
-				name="unit"
-				value="metric"
-				class="w-6 h-6 text-blue-600 focus:ring-blue-500"
-			/>
-			Metric
-		</label>
-		<label class="text-3xl font-bold tracking-tight text-white p-5 xs:text-xl sm:text-2xl">
-			<input
-				checked={unit === 'imperial'}
-				on:change={onChangeUnit}
-				type="radio"
-				name="unit"
-				value="imperial"
-				class="w-6 h-6 text-blue-600 focus:ring-blue-500"
-			/>
-			Imperial
-		</label>
-	</div>
-	<div class="text-center pt-10">
-		{#if unit === 'metric'}
-			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl">
-				Height
-				<input
-					bind:value={heightCm}
-					placeholder="cm"
-					class="w-80 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-				/>
-			</label>
-		{:else if unit === 'imperial'}
-			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl text-center">
-				Height
+	<!-- Calculator Card -->
+	<div class="card space-y-8">
+		<!-- Unit Selection -->
+		<div class="space-y-4">
+			<h2 class="text-xl font-semibold">Select Unit System</h2>
+			<div class="flex gap-4">
+				<label class="flex items-center space-x-2 cursor-pointer">
+					<input
+						checked={unit === 'metric'}
+						on:change={onChangeUnit}
+						type="radio"
+						name="unit"
+						value="metric"
+						class="w-4 h-4 text-primary focus:ring-primary border-slate-600 bg-slate-800"
+					/>
+					<span>Metric</span>
+				</label>
+				<label class="flex items-center space-x-2 cursor-pointer">
+					<input
+						checked={unit === 'imperial'}
+						on:change={onChangeUnit}
+						type="radio"
+						name="unit"
+						value="imperial"
+						class="w-4 h-4 text-primary focus:ring-primary border-slate-600 bg-slate-800"
+					/>
+					<span>Imperial</span>
+				</label>
+			</div>
+		</div>
+
+		<!-- Height Input -->
+		<div class="space-y-4">
+			<h2 class="text-xl font-semibold">Height</h2>
+			{#if unit === 'metric'}
+				<div class="relative">
+					<input
+						bind:value={heightCm}
+						type="number"
+						placeholder="Enter height"
+						class="input pr-12"
+					/>
+					<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">cm</span>
+				</div>
+			{:else}
 				<div class="grid grid-cols-2 gap-4">
-					<div>
-						<input
-							bind:value={heightFt}
-							placeholder="ft"
-							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-						/>
-						<!-- <span class="w-8">ft</span> -->
+					<div class="relative">
+						<input bind:value={heightFt} type="number" placeholder="Feet" class="input pr-12" />
+						<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">ft</span>
 					</div>
-					<div>
-						<input
-							bind:value={heightIn}
-							placeholder="in"
-							class="w-40 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-						/>
-						<!-- <span class="w-8">in</span> -->
+					<div class="relative">
+						<input bind:value={heightIn} type="number" placeholder="Inches" class="input pr-12" />
+						<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">in</span>
 					</div>
 				</div>
-			</label>
-		{/if}
-	</div>
-	<div class="text-center pt-10">
-		{#if unit === 'metric'}
-			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl">
-				Weight
-				<input
-					bind:value={weightKg}
-					placeholder="kg"
-					class="w-80 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-				/>
-			</label>
-		{:else if unit === 'imperial'}
-			<label class="font-extrabold tracking-tight text-white xs:text-2xl sm:text-3xl text-center">
-				Weight
-				<input
-					bind:value={weightPounds}
-					placeholder="pounds"
-					class="w-80 text-3xl bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
-				/>
-			</label>
-		{/if}
-	</div>
+			{/if}
+		</div>
 
-	<div class="p-5 text-white flex flex-col min-h-32">
+		<!-- Weight Input -->
+		<div class="space-y-4">
+			<h2 class="text-xl font-semibold">Weight</h2>
+			{#if unit === 'metric'}
+				<div class="relative">
+					<input
+						bind:value={weightKg}
+						type="number"
+						placeholder="Enter weight"
+						class="input pr-12"
+					/>
+					<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">kg</span>
+				</div>
+			{:else}
+				<div class="relative">
+					<input
+						bind:value={weightPounds}
+						type="number"
+						placeholder="Enter weight"
+						class="input pr-16"
+					/>
+					<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">lbs</span>
+				</div>
+			{/if}
+		</div>
+
+		<!-- Results -->
 		{#if showResult}
-			<div class="grid grid-cols-1 text-center">
-				<span class="font-extrabold xs:text-3xl md:text-7xl sm:text-5xl"
-					>{calculatedBmi.toFixed(1)}</span
-				>
-				<span class="font-extrabold xs:text-3xl md:text-5xl sm:text-3xl pt-2"
-					>{classifyBMI(calculatedBmi)}</span
-				>
-				<span class="xs:text-xl pt-5"
-					><a
-						href="https://www.cdc.gov/obesity/basics/adult-defining.html"
-						class="text-white underline">Classification source: The CDC</a
-					></span
-				>
+			<div class="pt-4 border-t border-slate-800" transition:fade>
+				<div class="space-y-4 text-center">
+					<div class="space-y-2">
+						<h3 class="text-4xl font-bold">{calculatedBmi.toFixed(1)}</h3>
+						<p class="text-sm text-text-muted">Your BMI</p>
+					</div>
+					<div class="space-y-2">
+						<p class="text-2xl font-semibold {classifyBMI(calculatedBmi).color}">
+							{classifyBMI(calculatedBmi).category}
+						</p>
+						<p class="text-sm text-text-muted">
+							According to the <a
+								href="https://www.cdc.gov/obesity/basics/adult-defining.html"
+								class="text-primary hover:text-primary-dark transition-colors"
+								target="_blank"
+								rel="noopener noreferrer">CDC classification</a
+							>
+						</p>
+					</div>
+				</div>
 			</div>
 		{/if}
 	</div>
-</section>
+
+	<!-- Disclaimer -->
+	<div class="text-center text-sm text-text-muted space-y-2">
+		<p>
+			BMI Categories: Underweight = &lt;18.5 | Normal weight = 18.5–24.9 | Overweight = 25–29.9 |
+			Obesity = BMI of 30 or greater
+		</p>
+		<p>
+			This calculator is for adults 20 years and older. For children and teens, please consult with
+			a healthcare provider.
+		</p>
+	</div>
+</div>
 
 <style>
 	section {
