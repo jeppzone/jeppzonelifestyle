@@ -1,5 +1,9 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
+	import { fade, crossfade } from 'svelte/transition';
+
+	const [send, receive] = crossfade({
+		duration: 300
+	});
 
 	let selected = '';
 	let dadLengthCm: number | null = null;
@@ -136,74 +140,94 @@
 		<div class="space-y-6">
 			<div class="space-y-4">
 				<h2 class="text-xl font-semibold">Mother's Height</h2>
-				{#if unit === 'metric'}
-					<div class="relative">
-						<input
-							bind:value={momLengthCm}
-							type="number"
-							placeholder="Enter height"
-							class="input pr-12"
-						/>
-						<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">cm</span>
-					</div>
-				{:else}
-					<div class="grid grid-cols-2 gap-4">
-						<div class="relative">
+				<div class="min-h-[48px] relative">
+					{#if unit === 'metric'}
+						<div
+							class="absolute inset-0"
+							in:receive={{ key: 'mom-metric' }}
+							out:send={{ key: 'mom-metric' }}
+						>
 							<input
-								bind:value={momLengthFt}
+								bind:value={momLengthCm}
 								type="number"
-								placeholder="Feet"
-								class="input pr-12"
+								placeholder="Enter height"
+								class="input pr-12 w-full"
 							/>
-							<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">ft</span>
+							<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">cm</span>
 						</div>
-						<div class="relative">
-							<input
-								bind:value={momLengthIn}
-								type="number"
-								placeholder="Inches"
-								class="input pr-12"
-							/>
-							<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">in</span>
+					{:else}
+						<div
+							class="absolute inset-0 grid grid-cols-2 gap-4"
+							in:receive={{ key: 'mom-imperial' }}
+							out:send={{ key: 'mom-imperial' }}
+						>
+							<div class="relative">
+								<input
+									bind:value={momLengthFt}
+									type="number"
+									placeholder="Feet"
+									class="input pr-12 w-full"
+								/>
+								<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">ft</span>
+							</div>
+							<div class="relative">
+								<input
+									bind:value={momLengthIn}
+									type="number"
+									placeholder="Inches"
+									class="input pr-12 w-full"
+								/>
+								<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">in</span>
+							</div>
 						</div>
-					</div>
-				{/if}
+					{/if}
+				</div>
 			</div>
 
 			<div class="space-y-4">
 				<h2 class="text-xl font-semibold">Father's Height</h2>
-				{#if unit === 'metric'}
-					<div class="relative">
-						<input
-							bind:value={dadLengthCm}
-							type="number"
-							placeholder="Enter height"
-							class="input pr-12"
-						/>
-						<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">cm</span>
-					</div>
-				{:else}
-					<div class="grid grid-cols-2 gap-4">
-						<div class="relative">
+				<div class="min-h-[48px] relative">
+					{#if unit === 'metric'}
+						<div
+							class="absolute inset-0"
+							in:receive={{ key: 'dad-metric' }}
+							out:send={{ key: 'dad-metric' }}
+						>
 							<input
-								bind:value={dadLengthFt}
+								bind:value={dadLengthCm}
 								type="number"
-								placeholder="Feet"
-								class="input pr-12"
+								placeholder="Enter height"
+								class="input pr-12 w-full"
 							/>
-							<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">ft</span>
+							<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">cm</span>
 						</div>
-						<div class="relative">
-							<input
-								bind:value={dadLengthIn}
-								type="number"
-								placeholder="Inches"
-								class="input pr-12"
-							/>
-							<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">in</span>
+					{:else}
+						<div
+							class="absolute inset-0 grid grid-cols-2 gap-4"
+							in:receive={{ key: 'dad-imperial' }}
+							out:send={{ key: 'dad-imperial' }}
+						>
+							<div class="relative">
+								<input
+									bind:value={dadLengthFt}
+									type="number"
+									placeholder="Feet"
+									class="input pr-12 w-full"
+								/>
+								<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">ft</span>
+							</div>
+							<div class="relative">
+								<input
+									bind:value={dadLengthIn}
+									type="number"
+									placeholder="Inches"
+									class="input pr-12 w-full"
+								/>
+								<span class="absolute right-4 top-1/2 -translate-y-1/2 text-text-muted">in</span>
+							</div>
 						</div>
-					</div>
-				{/if}
+					{/if}
+				</div>
 			</div>
 		</div>
 
@@ -237,25 +261,27 @@
 		</div>
 
 		<!-- Results -->
-		{#if showResult && !isNaN(predictedLength)}
-			<div class="pt-4 border-t border-slate-800" transition:fade>
-				<div class="space-y-4 text-center">
-					<div class="space-y-2">
-						<h3 class="text-4xl font-bold">
-							{#if unit === 'metric'}
-								{Math.round(predictedLength)} cm
-							{:else}
-								{toFeet(predictedLength).feet} ft {toFeet(predictedLength).inches} in
-							{/if}
-						</h3>
-						<p class="text-sm text-text-muted">Predicted Adult Height</p>
+		<div class="min-h-[120px]">
+			{#if showResult && !isNaN(predictedLength)}
+				<div class="pt-4 border-t border-slate-800" transition:fade|local>
+					<div class="space-y-4 text-center">
+						<div class="space-y-2">
+							<h3 class="text-4xl font-bold">
+								{#if unit === 'metric'}
+									{Math.round(predictedLength)} cm
+								{:else}
+									{toFeet(predictedLength).feet} ft {toFeet(predictedLength).inches} in
+								{/if}
+							</h3>
+							<p class="text-sm text-text-muted">Predicted Adult Height</p>
+						</div>
+						<p class="text-sm text-text-muted">
+							This prediction has a margin of error of approximately ±4 cm (±1.6 inches)
+						</p>
 					</div>
-					<p class="text-sm text-text-muted">
-						This prediction has a margin of error of approximately ±4 cm (±1.6 inches)
-					</p>
 				</div>
-			</div>
-		{/if}
+			{/if}
+		</div>
 	</div>
 
 	<!-- Disclaimer -->
