@@ -1,17 +1,15 @@
 <script lang="ts">
 	import { formatDate } from '$lib/utils';
+	import SEO from '$lib/components/SEO.svelte';
 
 	export let data;
 </script>
 
-<!-- SEO -->
-<svelte:head>
-	<title>{data.meta?.title} | Jeppzone Lifestyle</title>
-	<meta name="keywords" content={data.meta?.keywords} />
-	<meta name="description" content={data.meta?.description} />
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content={data.meta?.title} />
-</svelte:head>
+<SEO
+	title={`${data.meta?.title} | JeppzoneLifestyle`}
+	description={data.meta?.description}
+	type="article"
+/>
 
 <section>
 	<div class="prose max-w-4xl">

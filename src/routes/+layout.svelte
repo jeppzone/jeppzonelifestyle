@@ -4,21 +4,29 @@
 	import { afterNavigate, beforeNavigate } from '$app/navigation';
 	import Spinner from '$lib/Spinner.svelte';
 	import { fade } from 'svelte/transition';
+	import SEO from '$lib/components/SEO.svelte';
 
 	$: loading = false;
 	$: isHome = $page.url.pathname === '/';
 	$: isBlogPost = $page.url.pathname.startsWith('/posts/') && $page.url.pathname !== '/posts';
 	$: mobileMenuOpen = false;
 
+	// Simple default SEO values that will be overridden by specific pages when needed
+	$: pageTitle = isHome ? 'JeppzoneLifestyle - Health and Fitness Tools' : 'JeppzoneLifestyle';
+
+	$: pageDescription =
+		'Discover health and fitness tools, calculators, and informative articles to help you on your wellness journey.';
+
 	beforeNavigate(() => {
 		loading = true;
 	});
 
-	// Hook to detect when the navigation has finished
 	afterNavigate(() => {
 		loading = false;
 	});
 </script>
+
+<SEO title={pageTitle} description={pageDescription} />
 
 <div class="min-h-screen bg-gradient-to-br from-background to-surface text-text">
 	<header
