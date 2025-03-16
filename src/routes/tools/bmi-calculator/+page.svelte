@@ -212,29 +212,43 @@
 		</div>
 
 		<!-- Results -->
-		{#if showResult}
-			<div class="pt-4 border-t border-slate-800" transition:fade>
-				<div class="space-y-4 text-center">
-					<div class="space-y-2">
-						<h3 class="text-4xl font-bold">{calculatedBmi.toFixed(1)}</h3>
-						<p class="text-sm text-text-muted">Your BMI</p>
+		<div class="pt-4 border-t border-slate-800">
+			<div class="relative min-h-[180px]">
+				{#if showResult}
+					<div class="absolute inset-0 flex items-center justify-center">
+						<div class="w-full max-w-[300px]">
+							<div class="space-y-4 text-center" transition:fade|local={{ duration: 200 }}>
+								<div class="space-y-2">
+									<h3 class="text-4xl font-bold">{calculatedBmi.toFixed(1)}</h3>
+									<p class="text-sm text-text-muted">Your BMI</p>
+								</div>
+								<div class="space-y-2">
+									<p class="text-2xl font-semibold {classifyBMI(calculatedBmi).color}">
+										{classifyBMI(calculatedBmi).category}
+									</p>
+									<p class="text-sm text-text-muted">
+										According to the <a
+											href="https://www.cdc.gov/obesity/basics/adult-defining.html"
+											class="text-primary hover:text-primary-dark transition-colors"
+											target="_blank"
+											rel="noopener noreferrer">CDC classification</a
+										>
+									</p>
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="space-y-2">
-						<p class="text-2xl font-semibold {classifyBMI(calculatedBmi).color}">
-							{classifyBMI(calculatedBmi).category}
-						</p>
-						<p class="text-sm text-text-muted">
-							According to the <a
-								href="https://www.cdc.gov/obesity/basics/adult-defining.html"
-								class="text-primary hover:text-primary-dark transition-colors"
-								target="_blank"
-								rel="noopener noreferrer">CDC classification</a
-							>
-						</p>
+				{:else}
+					<div class="absolute inset-0 flex items-center justify-center">
+						<div class="w-full max-w-[300px]">
+							<p class="text-text-muted text-center" transition:fade|local={{ duration: 200 }}>
+								Enter your height and weight to see your BMI
+							</p>
+						</div>
 					</div>
-				</div>
+				{/if}
 			</div>
-		{/if}
+		</div>
 	</div>
 
 	<!-- Disclaimer -->
