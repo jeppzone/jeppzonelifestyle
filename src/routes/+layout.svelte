@@ -24,7 +24,7 @@
 	<header
 		class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-lg border-b border-slate-800"
 	>
-		<nav class="container mx-auto px-4 py-4">
+		<nav class="sm:container mx-auto px-4 py-4">
 			<div class="flex items-center justify-between">
 				<a
 					href="/"
@@ -117,7 +117,7 @@
 		</div>
 	{/if}
 
-	<main class="container mx-auto px-4 pt-24 pb-16 min-h-screen">
+	<main class="sm:container mx-auto px-4 pt-24 pb-16 min-h-screen">
 		{#if loading}
 			<div class="flex justify-center items-center h-[50vh]">
 				<Spinner width="w-16" height="h-16" />
@@ -133,7 +133,7 @@
 	</main>
 
 	<footer class="bg-surface/50 border-t border-slate-800">
-		<div class="container mx-auto px-4 py-8">
+		<div class="sm:container mx-auto px-4 py-8">
 			<p class="text-center text-text-muted">
 				Disclaimer: The contents of this site is for informational purposes only and should not be
 				seen as medical advice
