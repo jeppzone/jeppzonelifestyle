@@ -1,8 +1,11 @@
 ---
-title: 'The Complete Guide to the Carnivore Diet: Benefits, Risks & Results'
+title: 'The Carnivore Diet: A Complete Guide to Benefits, Risks & Results'
+description: 'Discover how the carnivore diet can transform your health: from weight loss to autoimmune relief. Learn about the science-backed benefits, success stories, and how to get started with this powerful meat-based diet.'
 date: '2025-03-18'
-description: 'Everything you need to know about the carnivore diet - from what it is and how it works, to the latest research and whether it might be right for you.'
-tags: ['carnivore diet', 'keto', 'weight loss', 'health', 'nutrition', 'diet', 'lifestyle']
+categories:
+  - diet
+  - nutrition
+  - health
 published: true
 keywords: Carnivore diet, meat-based diet, zero-carb diet, keto diet, paleo diet, weight loss diet, autoimmune diet, inflammation diet, high-protein diet, ketogenic diet, carnivore diet benefits, carnivore diet risks, carnivore diet results, carnivore diet research, carnivore diet meal plan, carnivore diet food list, carnivore diet for beginners, carnivore diet success stories, carnivore diet side effects, carnivore diet vs keto, ketogenic carnivore diet, lion diet, animal-based diet.
 ---

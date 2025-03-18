@@ -6,11 +6,7 @@
 	export let date = '';
 	export let description = '';
 
-	$: publishedAt = DateTime.fromISO(date).toLocaleString({
-		month: 'long',
-		day: 'numeric',
-		year: 'numeric'
-	});
+	$: publishedAt = DateTime.fromISO(date).toFormat('MMMM d, yyyy');
 </script>
 
 <div class="min-h-screen w-full flex flex-col items-center" transition:fade>
