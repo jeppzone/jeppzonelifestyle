@@ -7,6 +7,45 @@
 
 	import { page } from '$app/stores';
 	$: canonicalUrl = `https://www.jeppzonelifestyle.com${$page.url.pathname}`;
+
+	type Schema = {
+		'@context': string;
+		'@type': string;
+		name: string;
+		description: string;
+		url: string;
+		author?: {
+			'@type': string;
+			name: string;
+		};
+	};
+
+	let schema: Schema = {
+		'@context': 'https://schema.org',
+		'@type': type === 'article' ? 'Article' : 'WebSite',
+		name: title,
+		description: description,
+		url: canonicalUrl
+	};
+
+	$: {
+		schema = {
+			'@context': 'https://schema.org',
+			'@type': type === 'article' ? 'Article' : 'WebSite',
+			name: title,
+			description: description,
+			url: canonicalUrl
+		};
+
+		if (type === 'article') {
+			schema.author = {
+				'@type': 'Person',
+				name: 'Jesper Olsson Laine'
+			};
+		}
+	}
+
+	$: jsonLd = JSON.stringify(schema);
 </script>
 
 <svelte:head>
@@ -18,19 +57,5 @@
 	<meta name="og:image" content={image} />
 	<link rel="canonical" href={canonicalUrl} />
 
-	<script type="application/ld+json">
-    {JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": type === 'article' ? 'Article' : 'WebSite',
-      "name": title,
-      "description": description,
-      "url": canonicalUrl,
-      ...(type === 'article' && {
-        "author": {
-          "@type": "Person",
-          "name": "Jesper Olsson Laine"
-        }
-      })
-    })}
-	</script>
+	{@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
