@@ -9,6 +9,10 @@
 	title={`${data.meta?.title} | JeppzoneLifestyle`}
 	description={data.meta?.description}
 	type="article"
+	date={data.meta?.date}
+	author={data.meta?.author || 'Jesper Olsson Laine'}
+	categories={data.meta?.categories || []}
+	image={data.meta?.image || 'https://www.jeppzonelifestyle.com/og-image.jpg'}
 />
 
 <section>

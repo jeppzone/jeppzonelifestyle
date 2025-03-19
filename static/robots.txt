@@ -1,8 +1,13 @@
 User-agent: *
 Allow: /
+Allow: /posts/
+Allow: /sitemap.xml
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
 
 # Sitemap location
-Sitemap: https://www.jeppzonelifestyle.com/sitemap.xml
+Sitemap: https://jeppzonelifestyle.com/sitemap.xml
 
 # Crawl-delay to prevent overwhelming the server
 Crawl-delay: 1
