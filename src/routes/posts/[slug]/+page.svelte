@@ -1,8 +1,15 @@
 <script lang="ts">
 	import { formatDate } from '$lib/utils';
 	import SEO from '$lib/components/SEO.svelte';
+	import Comments from '$lib/components/Comments.svelte';
+	import { page } from '$app/stores';
 
 	export let data;
+	console.log('Blog post data:', data);
+
+	// Get the slug from the page store
+	$: postSlug = $page.params.slug;
+	console.log('Post slug from params:', postSlug);
 </script>
 
 <SEO
@@ -20,3 +27,7 @@
 		<svelte:component this={data.content} />
 	</div>
 </section>
+
+<div class="mt-16">
+	<Comments {postSlug} />
+</div>
