@@ -41,7 +41,7 @@ BMI has several advantages that make it a popular health metric:
 
 - **Population-Level Studies**: It's excellent for large-scale health research and identifying trends in population health
 - **Quick Assessment**: The calculation is simple, requiring only height and weight measurements
-- **Cost-Effective**: No special equipment needed, and you can calculate it anywhere (try our [BMI Calculator](/bmi-calculator)!)
+- **Cost-Effective**: No special equipment needed, and you can calculate it anywhere (try our [BMI Calculator](/tools/bmi-calculator)!)
 
 ### Where BMI Falls Short
 
@@ -102,7 +102,7 @@ Conversely, some people with high BMIs have excellent health markers, including 
 
 ## How to Use BMI Wisely
 
-If you're interested in checking your BMI, you can use our [BMI Calculator](/bmi-calculator). Here's how to make the most of this metric:
+If you're interested in checking your BMI, you can use our [BMI Calculator](/tools/bmi-calculator). Here's how to make the most of this metric:
 
 1. **Use it as a Starting Point**
 
