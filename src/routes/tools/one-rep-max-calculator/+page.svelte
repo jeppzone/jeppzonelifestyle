@@ -218,11 +218,41 @@
 		name="description"
 		content="Calculate your one rep max (1RM) for various exercises using the Brzycki formula. This calculator helps you estimate your maximum strength potential based on your current lifting performance."
 	/>
+	<meta property="og:title" content="One Rep Max Calculator | Jeppzone Lifestyle" />
+	<meta
+		property="og:description"
+		content="Calculate your one rep max (1RM) for various exercises using the Brzycki formula. This calculator helps you estimate your maximum strength potential based on your current lifting performance."
+	/>
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://jeppzonelifestyle.com/tools/one-rep-max-calculator" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="One Rep Max Calculator | Jeppzone Lifestyle" />
+	<meta
+		name="twitter:description"
+		content="Calculate your one rep max (1RM) for various exercises using the Brzycki formula. This calculator helps you estimate your maximum strength potential based on your current lifting performance."
+	/>
+	<link rel="canonical" href="https://jeppzonelifestyle.com/tools/one-rep-max-calculator" />
+	<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebApplication",
+			"name": "One Rep Max Calculator",
+			"description": "Calculate your one rep max (1RM) for various exercises using the Brzycki formula. This calculator helps you estimate your maximum strength potential based on your current lifting performance.",
+			"url": "https://jeppzonelifestyle.com/tools/one-rep-max-calculator",
+			"applicationCategory": "HealthApplication",
+			"operatingSystem": "Web Browser",
+			"offers": {
+				"@type": "Offer",
+				"price": "0",
+				"priceCurrency": "USD"
+			}
+		}
+	</script>
 </svelte:head>
 
-<div class="max-w-3xl mx-auto space-y-12">
+<main class="max-w-3xl mx-auto space-y-12">
 	<!-- Header -->
-	<section class="text-center space-y-6">
+	<article class="text-center space-y-6">
 		<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight animate-slide-up">
 			One Rep Max Calculator
 		</h1>
@@ -240,7 +270,7 @@
 				progressive overload when training.
 			</p>
 		</div>
-	</section>
+	</article>
 
 	<!-- Calculator Card -->
 	<div class="card space-y-8">
@@ -394,4 +424,4 @@
 			</div>
 		</div>
 	</div>
-</div>
+</main>
