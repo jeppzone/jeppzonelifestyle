@@ -2,13 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://jeppzonelifestyle.com/</loc>
-    <lastmod>2024-03-19</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://jeppzonelifestyle.com/posts/bmi-more-than-just-a-number</loc>
+    <lastmod>2025-03-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jeppzonelifestyle.com/posts/the-carnivore-diet-pros-and-cons</loc>
-    <lastmod>2024-03-18</lastmod>
+    <lastmod>2025-03-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -80,19 +86,19 @@
   </url>
   <url>
     <loc>https://jeppzonelifestyle.com/tools/child-height-calculator</loc>
-    <lastmod>2024-03-19</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jeppzonelifestyle.com/tools/bmi-calculator</loc>
-    <lastmod>2024-03-19</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://jeppzonelifestyle.com/tools/one-rep-max-calculator</loc>
-    <lastmod>2024-03-19</lastmod>
+    <lastmod>2025-03-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
