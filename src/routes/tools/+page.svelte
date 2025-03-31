@@ -111,5 +111,50 @@
 				</svg>
 			</div>
 		</a>
+
+		<a
+			href="/tools/one-rep-max-calculator"
+			class="card group hover:border-primary/50 border border-transparent"
+		>
+			<div class="flex items-center space-x-6">
+				<div
+					class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors"
+				>
+					<svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"
+						/>
+					</svg>
+				</div>
+				<div class="flex-1">
+					<h2 class="text-2xl font-semibold group-hover:text-primary transition-colors">
+						One Rep Max Calculator
+					</h2>
+					<p class="mt-2 text-text-muted">
+						Estimate your maximum strength potential using the scientifically validated Brzycki
+						formula.
+					</p>
+				</div>
+			</div>
+			<div class="mt-6 flex items-center text-sm text-text-muted">
+				<span>Try calculator</span>
+				<svg
+					class="ml-2 w-4 h-4 transition-transform group-hover:translate-x-2"
+					fill="none"
+					stroke="currentColor"
+					viewBox="0 0 24 24"
+				>
+					<path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M17 8l4 4m0 0l-4 4m4-4H3"
+					/>
+				</svg>
+			</div>
+		</a>
 	</section>
 </div>
