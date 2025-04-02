@@ -55,6 +55,12 @@
 							: 'text-text-muted hover:text-text'}">Tools</a
 					>
 					<a
+						href="/topics"
+						class="nav-link {$page.url.pathname.startsWith('/topics')
+							? 'text-primary'
+							: 'text-text-muted hover:text-text'}">Topics</a
+					>
+					<a
 						href="/posts"
 						class="nav-link {$page.url.pathname.startsWith('/posts')
 							? 'text-primary'
@@ -111,6 +117,15 @@
 					on:click={() => (mobileMenuOpen = false)}
 				>
 					Tools
+				</a>
+				<a
+					href="/topics"
+					class="text-2xl {$page.url.pathname.startsWith('/topics')
+						? 'text-primary'
+						: 'text-text-muted hover:text-text'}"
+					on:click={() => (mobileMenuOpen = false)}
+				>
+					Topics
 				</a>
 				<a
 					href="/posts"
