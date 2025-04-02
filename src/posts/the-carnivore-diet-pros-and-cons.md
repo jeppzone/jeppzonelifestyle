@@ -362,6 +362,6 @@ Remember, there's no one-size-fits-all approach to nutrition. What works for one
 
 ## Resources I Like
 
-- [Dr. Shawn Baker's YouTube Channel](https://www.youtube.com/@SBakerMD) - A leading voice in the carnivore community
+- [Dr. Shawn Baker's YouTube Channel](https://www.youtube.com/@ShawnBakerMD) - A leading voice in the carnivore community
 - [Dr. Ken Berry's YouTube Channel](https://www.youtube.com/@KenDBerryMD) - Another prominent carnivore diet advocate with a focus on evidence-based information
-- [The Plant-free MD](https://www.youtube.com/@plantfreemd) - Dr. Anthony Chaffee's channel, offering in-depth insights into the carnivore diet and its benefits
+- [The Plant-free MD](http://youtube.com/@anthonychaffeemd) - Dr. Anthony Chaffee's channel, offering in-depth insights into the carnivore diet and its benefits
