@@ -71,10 +71,6 @@
 	<Breadcrumb items={breadcrumbItems} />
 
 	<article class="prose prose-lg max-w-none">
-		<h1>{data.meta.title}</h1>
-		{#if data.meta.description}
-			<p class="lead">{data.meta.description}</p>
-		{/if}
 		<svelte:component this={data.content} />
 	</article>
 
