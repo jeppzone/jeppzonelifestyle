@@ -40,7 +40,7 @@
 				<p class="text-text-muted">Dive deep into specific health and lifestyle areas</p>
 			</div>
 			<div class="grid gap-6 md:grid-cols-2">
-				{#each [{ title: 'Sleep Health', slug: 'sleep-health', description: 'Learn about sleep science, sleep disorders, and how to improve your sleep quality.' }, { title: 'Fitness & Recovery', slug: 'fitness-recovery', description: 'Explore fitness training, injury recovery, and physical rehabilitation.' }, { title: 'Nutrition & Diet', slug: 'nutrition-diet', description: 'Discover different dietary approaches and their impact on health.' }, { title: 'Health Metrics & Monitoring', slug: 'health-metrics', description: 'Understand and track your health metrics for better wellness.' }] as topic}
+				{#each [{ title: 'Sleep Health', slug: 'sleep-health', description: 'Learn about sleep science, sleep disorders, and how to improve your sleep quality.' }, { title: 'Fitness & Recovery', slug: 'fitness-recovery', description: 'Explore fitness training, injury recovery, and physical rehabilitation.' }, { title: 'Nutrition & Diet', slug: 'nutrition-diet', description: 'Discover different dietary approaches and their impact on health.' }, { title: 'Health Metrics & Monitoring', slug: 'health-metrics', description: 'Understand and track your health metrics for better wellness.' }, { title: 'Mental Health & Personal Growth', slug: 'mental-health', description: 'Explore mental wellness, personal development, and emotional health.' }] as topic}
 					<a
 						href="/topics/{topic.slug}"
 						class="card group hover:border-primary/50 border border-transparent"
@@ -289,7 +289,7 @@
 				<p class="text-text-muted">Dive deep into specific health and lifestyle areas</p>
 			</div>
 			<div class="grid gap-6 md:grid-cols-2">
-				{#each [{ title: 'Sleep Health', slug: 'sleep-health', description: 'Learn about sleep science, sleep disorders, and how to improve your sleep quality.' }, { title: 'Fitness & Recovery', slug: 'fitness-recovery', description: 'Explore fitness training, injury recovery, and physical rehabilitation.' }, { title: 'Nutrition & Diet', slug: 'nutrition-diet', description: 'Discover different dietary approaches and their impact on health.' }, { title: 'Health Metrics & Monitoring', slug: 'health-metrics', description: 'Understand and track your health metrics for better wellness.' }] as topic}
+				{#each [{ title: 'Sleep Health', slug: 'sleep-health', description: 'Learn about sleep science, sleep disorders, and how to improve your sleep quality.' }, { title: 'Fitness & Recovery', slug: 'fitness-recovery', description: 'Explore fitness training, injury recovery, and physical rehabilitation.' }, { title: 'Nutrition & Diet', slug: 'nutrition-diet', description: 'Discover different dietary approaches and their impact on health.' }, { title: 'Health Metrics & Monitoring', slug: 'health-metrics', description: 'Understand and track your health metrics for better wellness.' }, { title: 'Mental Health & Personal Growth', slug: 'mental-health', description: 'Explore mental wellness, personal development, and emotional health.' }] as topic}
 					<a
 						href="/topics/{topic.slug}"
 						class="card group hover:border-primary/50 border border-transparent"

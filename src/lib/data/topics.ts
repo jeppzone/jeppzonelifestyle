@@ -39,5 +39,12 @@ export const topics: Topic[] = [
 			'the-perks-of-being-a-blood-donor'
 		],
 		tools: ['bmi-calculator', 'child-height-calculator']
+	},
+	{
+		title: 'Mental Health & Personal Growth',
+		slug: 'mental-health',
+		description: 'Explore mental wellness, personal development, and emotional health.',
+		posts: ['my-relationship-with-alcohol', 'the-psychology-of-new-years-resolutions'],
+		tools: []
 	}
 ];
