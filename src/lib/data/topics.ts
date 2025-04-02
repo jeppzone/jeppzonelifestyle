@@ -13,7 +13,7 @@ export const topics: Topic[] = [
 		description:
 			'Learn about sleep science, sleep disorders, and how to improve your sleep quality.',
 		posts: ['how-sleep-works', 'sleep-apnea', 'the-dangers-of-mouth-breathing'],
-		tools: []
+		tools: ['sleep-cycle-calculator']
 	},
 	{
 		title: 'Fitness & Recovery',

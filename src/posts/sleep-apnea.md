@@ -16,7 +16,7 @@ Sleep apnea means that your breathing stops intermittently during the night. The
 
 ### Obstructive sleep apnea
 
-Obstructive sleep apnea means that the muscles that support the soft tissues in your throat, such as your tongue, temporarily relax. When this occurs, your airway is narrowed or closed entirely, which cuts off the circulation of air and therefore also your breathing. This will often lead to you snoring and gasping for air. This shortness of breath will be sensed by the brain, which in turn wakes you up so that you can start breathing again. This awakening is usually so brief that you won’t remember it. The fact that the awakening is brief is a double-edged sword since, on the one hand, it’s positive because the loss of sleep quantity is minimized, but on the other hand, it might be harder to detect these apneas.
+Obstructive sleep apnea means that the muscles that support the soft tissues in your throat, such as your tongue, temporarily relax. When this occurs, your airway is narrowed or closed entirely, which cuts off the circulation of air and therefore also your breathing. This will often lead to you snoring and gasping for air. This shortness of breath will be sensed by the brain, which in turn wakes you up so that you can start breathing again. This awakening is usually so brief that you won't remember it. The fact that the awakening is brief is a double-edged sword since, on the one hand, it's positive because the loss of sleep quantity is minimized, but on the other hand, it might be harder to detect these apneas.
 
 #### Symptoms of obstructive sleep apnea
 
@@ -41,7 +41,7 @@ There is a multitude of factors that can contribute to an increased risk of deve
 - **Smoking.** Smoking can induce an increased amount of inflammation and fluid retention in the upper airway.
 - **Being male.** Men have a significantly larger risk of developing sleep apnea than women.
 - **Being overweight.** Fat deposits can impact the airways negatively.
-- **Family history.** Immediate relatives of people who have obstructive sleep apnea are twice as likely to develop OSA as someone who doesn’t have OSA in their immediate family.
+- **Family history.** Immediate relatives of people who have obstructive sleep apnea are twice as likely to develop OSA as someone who doesn't have OSA in their immediate family.
 - **Certain physical features of your head and face.** Having a lower jaw that is small or positioned farther back increases the risk of developing OSA.
 
 #### Health implications of obstructive sleep apnea
@@ -56,7 +56,7 @@ The health implications of obstructive sleep apnea go far beyond the aforementio
 
 ### Central sleep apnea
 
-There’s another form of sleep apnea called central sleep apnea (CSA). While obstructive sleep apnea is more of a mechanical failure, central sleep apnea is caused by a signaling failure. It occurs when the brain doesn’t send proper signals to the muscles that control respiration, meaning that you will intermittently stop breathing.
+There's another form of sleep apnea called central sleep apnea (CSA). While obstructive sleep apnea is more of a mechanical failure, central sleep apnea is caused by a signaling failure. It occurs when the brain doesn't send proper signals to the muscles that control respiration, meaning that you will intermittently stop breathing.
 
 #### Risk factors for central sleep apnea
 
@@ -69,11 +69,11 @@ As for obstructive sleep apnea, some factors increase the risk of developing cen
 
 #### Health implications of central sleep apnea
 
-It’s harder to generalize the health implications of central sleep apnea, as they are very dependent on the underlying condition that is causing the disturbed breathing.
+It's harder to generalize the health implications of central sleep apnea, as they are very dependent on the underlying condition that is causing the disturbed breathing.
 
 ## Diagnosing sleep apnea
 
-Diagnosing sleep apnea is a little bit tricky. Since most of the symptoms occur during sleep, it’s hard for the afflicted person to self-diagnose. And the symptoms that don’t occur during sleep are quite fuzzy and can be caused by a myriad of other factors. Therefore, it’s best to contact your doctor to start an investigation. This investigation typically comprises a review of your overall physical health and your symptoms, as well as a physical exam. This is done to identify your risk factors for sleep apnea. If your doctor concludes that it’s plausible that you might suffer from sleep apnea, you will undergo a sleep study as the next step.
+Diagnosing sleep apnea is a little bit tricky. Since most of the symptoms occur during sleep, it's hard for the afflicted person to self-diagnose. And the symptoms that don't occur during sleep are quite fuzzy and can be caused by a myriad of other factors. Therefore, it's best to contact your doctor to start an investigation. This investigation typically comprises a review of your overall physical health and your symptoms, as well as a physical exam. This is done to identify your risk factors for sleep apnea. If your doctor concludes that it's plausible that you might suffer from sleep apnea, you will undergo a sleep study as the next step.
 
 ### The sleep study
 
@@ -85,21 +85,21 @@ Treating sleep apnea is about minimizing breathing disruptions during the night 
 
 ### Treating obstructive sleep apnea
 
-One of the most common treatments for OSA is through the use of a so-called CPAP machine. CPAP stands for _Continuous Positive Airway Pressure_. This device sends a stream of pressurized air through your airways at night to remedy the breathing stops. A CPAP machine is a prescription-only device as it needs to be calibrated to work correctly. This type of treatment can be quite intrusive to you and your partner, since it’s a machine that will make noise, and you will have hoses attached to you at all times during the night. So the CPAP machine can take some time to get used to, but it’s a very effective treatment.
+One of the most common treatments for OSA is through the use of a so-called CPAP machine. CPAP stands for _Continuous Positive Airway Pressure_. This device sends a stream of pressurized air through your airways at night to remedy the breathing stops. A CPAP machine is a prescription-only device as it needs to be calibrated to work correctly. This type of treatment can be quite intrusive to you and your partner, since it's a machine that will make noise, and you will have hoses attached to you at all times during the night. So the CPAP machine can take some time to get used to, but it's a very effective treatment.
 
 Another treatment for OSA is the use of a mouthpiece that keeps the tongue and the jaw in certain, fixed positions. This is often used for less severe levels of OSA and does not improve breathing significantly, but it can reduce snoring and it is an alternative for people that are not comfortable with the CPAP machine.
 
 Surgery to remove tissue in the throat that is blocking your airways is also an alternative treatment.
 
-In addition to all this, it’s also possible to change certain lifestyle factors as part of treating OSA. For example, losing weight, exercising, reducing alcohol consumption, and switching sleep positions to avoid sleeping on your back can all help treat obstructive sleep apnea.
+In addition to all this, it's also possible to change certain lifestyle factors as part of treating OSA. For example, losing weight, exercising, reducing alcohol consumption, and switching sleep positions to avoid sleeping on your back can all help treat obstructive sleep apnea. You can also try optimizing your sleep schedule using our [Sleep Cycle Calculator](/tools/sleep-cycle-calculator) to ensure you're getting the right amount of sleep cycles for your needs.
 
 ### Treating central sleep apnea
 
-Treatment of CSA is mainly focused on treating the underlying cause of the person’s suboptimal breathing rather than the symptoms. If the breathing disruptions are not severe, this treatment is often all it takes to get rid of CSA. In more severe cases or if the CSA persists after trying to treat the underlying condition, the use of a CPAP machine might be required as well. Certain medications that speed up a person’s breathing or oxygen therapy can be used as alternative treatments.
+Treatment of CSA is mainly focused on treating the underlying cause of the person's suboptimal breathing rather than the symptoms. If the breathing disruptions are not severe, this treatment is often all it takes to get rid of CSA. In more severe cases or if the CSA persists after trying to treat the underlying condition, the use of a CPAP machine might be required as well. Certain medications that speed up a person's breathing or oxygen therapy can be used as alternative treatments.
 
 ## My thoughts on sleep apnea
 
-As I mentioned in my post on [how sleep works and my experience with it](/posts/how-sleep-works), I have had problems with my sleep for a long time. Since I learned about sleep apnea a couple of years back, I’ve always had the thought in the back of my mind that I might suffer from it. As I’ve been doing research for this article, I’ve further realized that I suffer from most of the symptoms of obstructive sleep apnea. I have never felt well-rested upon awakening. My mouth is always dry and I often have a headache when waking up. I wake up frequently during the night and I’m often sleepy during the day. My focus is lacking and I’m quite easily irritated or frustrated. I also realized that I do carry some of the risk factors for obstructive sleep apnea as well. I’m male, I have narrow airways and a congested nose. I also believe that the structure of my face in general and my mouth and jaw in particular is suboptimal. I’ve had a lot of dental problems throughout the years and I’ve had to remove a lot of teeth due to lack of space in my mouth. In the near future, I will contact my doctor to try and undergo an investigation for obstructive sleep apnea. Updates on how this goes will of course be posted here on the blog. So stay tuned for that! Thank you all for reading. Until next time!
+As I mentioned in my post on [how sleep works and my experience with it](/posts/how-sleep-works), I have had problems with my sleep for a long time. Since I learned about sleep apnea a couple of years back, I've always had the thought in the back of my mind that I might suffer from it. As I've been doing research for this article, I've further realized that I suffer from most of the symptoms of obstructive sleep apnea. I have never felt well-rested upon awakening. My mouth is always dry and I often have a headache when waking up. I wake up frequently during the night and I'm often sleepy during the day. My focus is lacking and I'm quite easily irritated or frustrated. I also realized that I do carry some of the risk factors for obstructive sleep apnea as well. I'm male, I have narrow airways and a congested nose. I also believe that the structure of my face in general and my mouth and jaw in particular is suboptimal. I've had a lot of dental problems throughout the years and I've had to remove a lot of teeth due to lack of space in my mouth. In the near future, I will contact my doctor to try and undergo an investigation for obstructive sleep apnea. Updates on how this goes will of course be posted here on the blog. So stay tuned for that! Thank you all for reading. Until next time!
 
 ## Resources I like
 

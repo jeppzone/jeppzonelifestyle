@@ -24,6 +24,13 @@
 			description:
 				'Estimate your maximum strength potential using the scientifically validated Brzycki formula.',
 			icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />'
+		},
+		{
+			href: '/tools/sleep-cycle-calculator',
+			title: 'Sleep Cycle Calculator',
+			description:
+				'Calculate your optimal bedtime based on sleep cycles to wake up feeling refreshed.',
+			icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />'
 		}
 	];
 </script>
@@ -32,7 +39,7 @@
 	<title>Health & Lifestyle Tools | Jeppzone Lifestyle</title>
 	<meta
 		name="description"
-		content="Free calculators and tools for health metrics including BMI calculator and child height predictor."
+		content="Free calculators and tools for health metrics including BMI calculator, child height predictor, and sleep cycle calculator."
 	/>
 </svelte:head>
 
