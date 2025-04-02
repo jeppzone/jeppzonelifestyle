@@ -52,6 +52,37 @@ When I was younger, I had a really strong urge to eat breakfast. I really had to
 
 ## Resources I like
 
+### Books
+
 - [The Circadian Code (affiliate link)](https://amzn.to/3X7Ja4c) - A book by Satchin Panda on how time-restricted eating connects to our circadian rhythm.
 - [Fast This Way (affiliate link)](https://amzn.to/3UM2sdF) - A book on how "the father of biohacking" Dave Asprey incorporates fasting into his life.
-- [How To Do Intermittent Fasting For Health](https://www.youtube.com/watch?v=fZhkFOCeZMQ) - Youtube video by Dr. Sten Ekberg.
+
+### Video Resources
+
+Below are some helpful videos that dive deeper into time-restricted eating, fasting and its benefits:
+
+#### I tried fasting for 72 hours... How does it feel to go 3 days without food?
+
+<iframe 
+  width="100%" 
+  height="400" 
+  src="https://www.youtube.com/embed/sGUey_TlNaQ" 
+  title="I tried fasting for 72 hours... How does it feel to go 3 days without food?" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+
+#### 5-Day Fasting Challenge: My Unfiltered Journey + Key Takeaways and Tips
+
+<iframe 
+  width="100%" 
+  height="400" 
+  src="https://www.youtube.com/embed/tH2EXDM1xDA" 
+  title="5-Day Fasting Challenge: My Unfiltered Journey + Key Takeaways and Tips" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+  allowfullscreen>
+</iframe>
+
+These videos provide a comprehensive understanding of time-restricted eating, from scientific foundations to practical implementation. They're particularly helpful for visual learners and those who prefer audio-visual content.
