@@ -38,6 +38,20 @@
 	body {
 		@apply min-h-screen bg-gradient-to-br from-background to-surface text-text font-sans antialiased;
 		background-attachment: fixed;
+		margin: 0;
+		padding: 0;
+		font-family:
+			system-ui,
+			-apple-system,
+			BlinkMacSystemFont,
+			'Segoe UI',
+			Roboto,
+			Oxygen,
+			Ubuntu,
+			Cantarell,
+			'Open Sans',
+			'Helvetica Neue',
+			sans-serif;
 	}
 
 	h1,
@@ -135,4 +149,78 @@
 
 .animate-slide-up {
 	animation: slideUp 0.5s ease forwards;
+}
+
+/* 404 Page styles */
+.error-page {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	background-color: #f9fafb;
+}
+
+.error-content {
+	max-width: 42rem;
+	text-align: center;
+}
+
+.error-title {
+	font-size: 3.75rem;
+	font-weight: 700;
+	color: #111827;
+	margin-bottom: 1rem;
+}
+
+.error-subtitle {
+	font-size: 1.5rem;
+	font-weight: 600;
+	color: #374151;
+	margin-bottom: 1.5rem;
+}
+
+.error-text {
+	color: #4b5563;
+	margin-bottom: 2rem;
+}
+
+.error-links {
+	display: grid;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	gap: 1rem;
+	margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+	.error-links {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+.error-link {
+	padding: 1rem;
+	background-color: white;
+	border-radius: 0.5rem;
+	box-shadow:
+		0 1px 3px 0 rgba(0, 0, 0, 0.1),
+		0 1px 2px 0 rgba(0, 0, 0, 0.06);
+	transition: box-shadow 0.2s;
+}
+
+.error-link:hover {
+	box-shadow:
+		0 4px 6px -1px rgba(0, 0, 0, 0.1),
+		0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.error-link-title {
+	font-weight: 600;
+	color: #111827;
+}
+
+.error-link-text {
+	font-size: 0.875rem;
+	color: #4b5563;
 }

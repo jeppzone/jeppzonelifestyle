@@ -8,7 +8,32 @@
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
 		<link rel="preload" as="style" href="https://rsms.me/inter/inter.css">
+		<link rel="preload" as="style" href="/app.css">
+		<style>
+			/* Critical CSS */
+			body {
+				margin: 0;
+				padding: 0;
+				font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			}
+		</style>
+		<link rel="stylesheet" href="https://rsms.me/inter/inter.css" media="print" onload="this.media='all'">
+		<link rel="stylesheet" href="/app.css" media="print" onload="this.media='all'">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta property="og:title" content="Health & Wellness Tools | Sleep, Fitness & Nutrition Calculators | Jeppzone Lifestyle" />
+		<meta property="og:description" content="Discover expert health and wellness tools, including sleep cycle calculators, fitness trackers, and nutrition guides. Get personalized insights for better sleep, improved fitness, and optimal nutrition." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://jeppzonelifestyle.com" />
+		<meta property="og:image" content="https://jeppzonelifestyle.com/og-image.jpg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Health & Wellness Tools | Sleep, Fitness & Nutrition Calculators | Jeppzone Lifestyle" />
+		<meta name="twitter:description" content="Discover expert health and wellness tools, including sleep cycle calculators, fitness trackers, and nutrition guides. Get personalized insights for better sleep, improved fitness, and optimal nutrition." />
+		<meta name="twitter:image" content="https://jeppzonelifestyle.com/og-image.jpg" />
+		<title>Health & Wellness Tools | Sleep, Fitness & Nutrition Calculators | Jeppzone Lifestyle</title>
+		<meta
+			name="description"
+			content="Discover expert health and wellness tools, including sleep cycle calculators, fitness trackers, and nutrition guides. Get personalized insights for better sleep, improved fitness, and optimal nutrition."
+		/>
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
